@@ -18,7 +18,7 @@ par(mfrow=c(1,2))
 plot(df$IND)
 plot(df$IND_revised)
 ```
-
+We aggregated the education variable into 4 levels that capture high school, college, and advanced college degrees.
 ```{r}
 # aggregate the education variable
 df$EDUC_revised <- as.factor(sapply(df$EDUC, function(x) {
@@ -31,11 +31,18 @@ par(mfrow=c(1,2))
 plot(as.factor(df$EDUC))
 plot(df$EDUC_revised)
 ```
+Unsuprisingly, there is an obvious correlation between the education level and income.
+```{r}
+library(ggplot2)
+ggplot(df) +
+  geom_point(aes(x = seq(1,nrow(df)), y = df$INCTOT, color=df$EDUC_revised)) +
+  theme_bw()
+```
 
 ```{r}
 # save data
 nrow(df)
-write.csv(df, file='dataset.csv', col.names=T)
+write.csv(df, file='dataset.csv', col.names=T, row.names = F)
 ```
 ```{r}
 # delete the rows that have 0 work hours per week
@@ -44,7 +51,9 @@ hist(df$UHRSWORK)
 ```
 
 ## Response variable
+We dropped `INCWAGE` variable after realizing it was not very discriptive. We decided to use `INCTOT` as a response variable.
 ```{r}
 hist(df$INCTOT, breaks = 80)
 ```
+
 
