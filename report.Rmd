@@ -43,3 +43,8 @@ df <- df[-which(df$UHRSWORK==0), ]
 hist(df$UHRSWORK)
 ```
 
+## Response variable
+```{r}
+hist(df$INCTOT, breaks = 80)
+```
+
