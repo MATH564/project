@@ -1,8 +1,9 @@
 ---
-title: "R Notebook"
+title: "Stats project report"
 output: html_notebook
 ---
 
+# Data preparation and visualization
 
 ```{r}
 df <- read.csv('dataset.csv')
@@ -17,7 +18,21 @@ par(mfrow=c(1,2))
 plot(df$IND)
 plot(df$IND_revised)
 ```
-```{r}
 
+```{r}
+# aggregate the education variable
+df$EDUC_revised <- as.factor(sapply(df$EDUC, function(x) {
+  if (x == 0) return('no school or N/A')
+  else if (x < 7) return('1-12 years of pre-college')
+  else if (x < 11) return('1-4 years of college')
+  else return ('5+ years of college')
+}))
+par(mfrow=c(1,2))
+plot(as.factor(df$EDUC))
+plot(df$EDUC_revised)
+```
+
+```{r}
+write.csv(df, file='dataset.csv', col.names=T)
 ```
 
