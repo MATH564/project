@@ -31,6 +31,18 @@ par(mfrow=c(1,2))
 plot(as.factor(df$EDUC))
 plot(df$EDUC_revised)
 ```
+```{r}
+# aggregate the school type variable
+df$SCHLTYPE_revised <- as.factor(sapply(df$SCHLTYPE, function(x) {
+  if (x == 0) return('N/A')
+  else if (x == 1) return('Not Enrolled')
+  else if (x == 2) return('Public School')
+  else return ('Private School')
+}))
+par(mfrow=c(1,2))
+plot(as.factor(df$SCHLTYPE))
+plot(df$SCHLTYPE_revised)
+```
 
 ```{r}
 # save data
