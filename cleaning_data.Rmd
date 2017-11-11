@@ -1,0 +1,88 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
+
+```{r}
+income<-read.csv("dataset_rev.csv")
+View(income)
+##IND_revised
+income$IND_revised <- income$IND
+income$IND_revised[income$IND_revised >= 170 & income$IND_revised <= 3990  ] <- "Agriculture, Forestry, Fishing and Hunting, and Mining" 
+
+income$IND_revised[income$IND_revised >= 4070 & income$IND_revised <= 4590  ] <- "Wholesale Trade"
+
+income$IND_revised[income$IND_revised >= 4670 & income$IND_revised <= 5790  ] <- "Retail Trade"
+
+income$IND_revised[income$IND_revised >= 6070 & income$IND_revised <= 6390  ] <- "Transportation and Warehousing, and Utilities"
+
+income$IND_revised[income$IND_revised == 570 || income$IND_revised == 580 || income$IND_revised == 590 || income$IND_revised == 670 || income$IND_revised == 680 || income$IND_revised == 690] <- "Transportation and Warehousing, and Utilities"
+
+income$IND_revised[income$IND_revised >= 6470 & income$IND_revised <= 6780  ] <-"Information"
+
+income$IND_revised[income$IND_revised >= 6870 & income$IND_revised <= 7190  ] <- "Finance and Insurance, and Real Estate and Rental and Leasing"
+
+income$IND_revised[income$IND_revised >= 7270 & income$IND_revised <= 7790  ] <- "Professional, Scientific, and Management, and Administrative, and Waste Management Services"
+
+income$IND_revised[income$IND_revised >= 7860 & income$IND_revised <= 8470  ] <- "Educational Services, and Health Care and Social Assistance"
+
+income$IND_revised[income$IND_revised >= 8560 & income$IND_revised <= 8690  ] <- "Arts, Entertainment, and Recreation, and Accommodation and Food Services"
+
+income$IND_revised[income$IND_revised >= 8770 & income$IND_revised <= 9290  ] <- "Other Services, Except Public Administration"
+
+income$IND_revised[income$IND_revised >= 9370 & income$IND_revised <= 9590  ] <- "Public Administration"
+
+income$IND_revised[income$IND_revised >= 9670 & income$IND_revised <= 9920  ] <- "Active Duty Military"
+
+write.csv(income, file = "IND_revised.csv")
+
+#Veteran_revised
+table(income$VETSTAT)
+income_vet_revised <- income
+income_vet_revised <- subset(income_vet_revised,select = -VETSTATD)
+View(income_vet_revised)
+colnames(income_vet_revised)
+income_vet_revised <- income_vet_revised[income_vet_revised$VETSTAT!=0,]
+table(income_vet_revised$VETSTAT)
+write.csv(income_vet_revised, file = "vet_revised.csv")
+
+#States_revised
+states_revised <- read.csv("dataset.csv")
+table(states_revised$PWSTATE2_revised)
+table(states_revised$PWSTATE2)
+View(states_revised)
+states_revised$PWSTATE2_revised <- states_revised$PWSTATE2
+states_revised <- states_revised[!(states_revised$PWSTATE2_revised >= 61),]
+states_revised <- states_revised[!(states_revised$PWSTATE2_revised == 0),]
+
+states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(53,41,6,30,16,56,32,49,8,4,35,2,15)] <- "WEST"
+
+states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(38,27,46,19,31,20,29,55,26,17,18,39)] <- "MIDWEST"
+
+states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(40,5,48,22,28,1,47,21,54,51,37,45,13,12,10,24,11)] <- "SOUTH"
+
+states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(33,50,23,25,44,9,36,34,42)] <- "NORTHEAST"
+
+states_revised$IND_revised[states_revised$IND %in% c(570,580,590,670,680,690)] <- "Transportation and Warehousing, and Utilities"
+
+subset(states_revised,IND == 690, select = c(IND,IND_revised))
+# test <-  data.frame(bf11 = sample(4, 10, replace = TRUE),foo = runif(10))
+# test
+# test1 <- test
+# test1$bf11[test$bf11 %in% c(1,3)] <- "changed"
+# test1
+
+write.csv(states_revised, file = "states_revised.csv")
+
+install.packages("rmarkdown")
+
+
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
