@@ -1,0 +1,23 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+
+```{r}
+df <- read.csv('dataset.csv')
+df$VETSTAT <- as.factor(df$VETSTAT)
+df$IND <- as.factor(df$IND)
+head(df)
+```
+
+```{r}
+# aggregating the industry variable
+par(mfrow=c(1,2))
+plot(df$IND)
+plot(df$IND_revised)
+```
+```{r}
+
+```
+
