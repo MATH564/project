@@ -33,6 +33,13 @@ plot(df$EDUC_revised)
 ```
 
 ```{r}
+# save data
+nrow(df)
 write.csv(df, file='dataset.csv', col.names=T)
+```
+```{r}
+# delete the rows that have 0 work hours per week
+df <- df[-which(df$UHRSWORK==0), ] 
+hist(df$UHRSWORK)
 ```
 
