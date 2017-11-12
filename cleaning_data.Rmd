@@ -2,13 +2,8 @@
 title: "R Notebook"
 output: html_notebook
 ---
-
-This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
-
-Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Cmd+Shift+Enter*. 
-
 ```{r}
-income<-read.csv("dataset_rev.csv")
+income<-read.csv("dataset.csv")
 View(income)
 ##IND_revised
 income$IND_revised <- income$IND
@@ -70,19 +65,55 @@ states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(33,50,23,
 states_revised$IND_revised[states_revised$IND %in% c(570,580,590,670,680,690)] <- "Transportation and Warehousing, and Utilities"
 
 subset(states_revised,IND == 690, select = c(IND,IND_revised))
-# test <-  data.frame(bf11 = sample(4, 10, replace = TRUE),foo = runif(10))
-# test
-# test1 <- test
-# test1$bf11[test$bf11 %in% c(1,3)] <- "changed"
-# test1
 
 write.csv(states_revised, file = "states_revised.csv")
 
-install.packages("rmarkdown")
+#categorical variables representation from integer to String
+cat_revised <- read.csv("dataset.csv")
+View(cat_revised)
+#Modifying MARRNO
+cat_revised$MARRNO_revised <- cat_revised$MARRNO
+table(cat_revised$MARRNO)
+table(cat_revised$MARRNO_revised) 
+cat_revised$MARRNO_revised[cat_revised$MARRNO_revised == 0] <- "N/A"
+cat_revised$MARRNO_revised[cat_revised$MARRNO_revised == 1] <- "Married once"
+cat_revised$MARRNO_revised[cat_revised$MARRNO_revised == 2] <- "Married twice"
+cat_revised$MARRNO_revised[cat_revised$MARRNO_revised == 3] <- "Married thrice or more"
 
+#Modifying RACE
+cat_revised$RACE_revised <- cat_revised$RACE
+table(cat_revised$RACE)
+cat_revised$RACE_revised[cat_revised$RACE_revised == 1] <- "White"
+cat_revised$RACE_revised[cat_revised$RACE_revised == 2] <- "Black"
+cat_revised$RACE_revised[cat_revised$RACE_revised == 3] <- "American Indian"
+cat_revised$RACE_revised[cat_revised$RACE_revised %in% c(4,5,6)] <- "Asian"
+cat_revised$RACE_revised[cat_revised$RACE_revised %in% c(7,8,9)] <- "Other"
+table(cat_revised$RACE_revised)
+
+#Modifying HCOVANY
+cat_revised$HCOVANY_revised <- cat_revised$HCOVANY
+table(cat_revised$HCOVANY)
+cat_revised$HCOVANY_revised[cat_revised$HCOVANY_revised == 1] <- "No health insurance coverage"
+cat_revised$HCOVANY_revised[cat_revised$HCOVANY_revised == 2] <- "With health insurance coverage"
+table(cat_revised$HCOVANY_revised)
+
+#Modifying WKSWORK2
+cat_revised$WKSWORK2_revised <- cat_revised$WKSWORK2
+table(cat_revised$WKSWORK2)
+cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 1] <- "1-13 weeks"
+cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 2] <- "14-26 weeks"
+cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 3] <- "27-39 weeks"
+cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 4] <- "40-47 weeks"
+cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 5] <- "48-49 weeks"
+cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 6] <- "50-52 weeks"
+table(cat_revised$WKSWORK2_revised)
+
+#Modifying VETSTAT
+cat_revised$VETSTAT_revised <- cat_revised$VETSTAT
+table(cat_revised$VETSTAT)
+cat_revised$VETSTAT_revised[cat_revised$VETSTAT_revised == 1] <- "Not a veteran"
+cat_revised$VETSTAT_revised[cat_revised$VETSTAT_revised == 2] <- "Veteran"
+table(cat_revised$VETSTAT_revised)
 
 ```
 
-Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Cmd+Option+I*.
-
-When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Cmd+Shift+K* to preview the HTML file).
