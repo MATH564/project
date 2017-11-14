@@ -1,0 +1,501 @@
+"NUM_CHILD","SEX","AGE","NUM_MARR","WEEKS_WORKED_NUMERIC","NUM_HOURS_WEEK","TRAVEL_TIME","INDUSTRY","EDUC","DIVISION","SCHL_TYPE","RACE","HEALTH_INS","WEEKS_WORKED","VETERAN","INCOME"
+0,"F",48,1,6,45,10,"Information","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",218000
+1,"M",47,1,6,45,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",135000
+0,"M",48,0,2,30,60,"Wholesale Trade","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","14-26 weeks","Not a veteran",7000
+0,"M",63,2,6,57,30,"Transportation and Warehousing, and Utilities","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",49000
+0,"M",64,1,6,65,15,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",42000
+1,"M",62,1,6,40,10,"Wholesale Trade","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",27500
+0,"M",53,2,6,40,5,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",92000
+0,"F",46,3,6,25,5,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+0,"M",24,0,6,45,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",22000
+0,"F",49,0,6,45,45,"Retail Trade","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",73000
+0,"F",17,0,3,15,2,"Retail Trade","1-12 years of pre-college","SOUTH","Public School","White","With health insurance coverage","27-39 weeks","Not a veteran",10000
+0,"F",77,2,6,22,20,"Retail Trade","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",32500
+0,"F",60,0,6,40,15,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",1e+05
+1,"M",49,0,6,50,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","NORTHEAST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",44300
+1,"F",27,0,3,40,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",24000
+1,"M",42,1,6,40,25,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","WEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",22400
+5,"M",36,1,6,34,30,"Retail Trade","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",42000
+1,"M",50,1,6,40,35,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",52000
+0,"F",76,1,6,40,10,"Wholesale Trade","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",48600
+0,"M",48,1,6,40,30,"Wholesale Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",51200
+2,"M",54,1,6,60,90,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",126000
+1,"M",44,1,6,40,5,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",36000
+2,"M",31,1,6,40,60,"Public Administration","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",53000
+0,"F",34,1,6,65,22,"Active Duty Military","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",62600
+0,"M",32,1,6,60,75,"Finance and Insurance, and Real Estate and Rental and Leasing","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",90000
+0,"F",58,2,6,40,30,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",80000
+1,"M",47,1,6,50,0,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",30000
+0,"F",26,0,6,40,10,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+2,"F",42,1,6,40,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",63000
+0,"M",21,0,6,30,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","MIDWEST","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",7200
+0,"M",17,0,1,10,75,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Public School","White","With health insurance coverage","1-13 weeks","Not a veteran",1000
+0,"M",46,0,6,50,0,"Wholesale Trade","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",130000
+0,"M",63,1,6,60,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",60000
+0,"F",17,0,6,25,10,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Public School","White","No health insurance coverage","50-52 weeks","Not a veteran",5000
+0,"M",55,1,6,42,0,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","NORTHEAST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",23000
+0,"F",67,1,6,35,45,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",75000
+0,"F",26,0,1,2,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","1-13 weeks","Not a veteran",5420
+0,"F",24,1,5,40,20,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",22000
+3,"M",49,1,6,40,20,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","WEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",26000
+0,"M",27,0,6,40,35,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+0,"F",74,1,6,60,20,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",20000
+1,"F",27,0,6,38,25,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",48410
+0,"F",52,0,6,40,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",53120
+1,"F",50,3,6,40,15,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",86000
+0,"M",23,1,4,35,90,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",15000
+0,"M",54,2,6,40,45,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",52900
+0,"F",31,1,6,30,25,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",25000
+0,"M",59,1,6,50,0,"Wholesale Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",114000
+4,"M",36,1,6,50,60,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",115000
+0,"M",35,1,6,40,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+3,"M",49,1,6,40,30,"Wholesale Trade","1-4 years of college","WEST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",39000
+1,"F",27,1,4,40,30,"Wholesale Trade","1-4 years of college","MIDWEST","Public School","Asian","With health insurance coverage","40-47 weeks","Not a veteran",43000
+1,"F",47,1,6,40,25,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",25000
+0,"F",24,0,6,40,15,"Information","1-4 years of college","SOUTH","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",25000
+0,"M",50,0,4,40,22,"Retail Trade","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",22000
+0,"F",27,1,6,55,25,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",31000
+1,"M",52,1,6,40,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",65000
+1,"M",32,1,6,52,35,"Transportation and Warehousing, and Utilities","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",84000
+1,"F",44,0,6,40,5,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Public School","Black","With health insurance coverage","50-52 weeks","Not a veteran",30500
+2,"M",36,1,6,40,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",34000
+0,"F",63,3,6,40,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",64000
+1,"M",34,1,6,55,55,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"M",31,1,4,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","White","No health insurance coverage","40-47 weeks","Not a veteran",25000
+0,"F",39,0,6,42,30,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",85000
+0,"F",39,0,4,35,30,"Transportation and Warehousing, and Utilities","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",15000
+0,"M",32,0,6,40,40,"Other Services, Except Public Administration","1-4 years of college","WEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",25000
+3,"F",45,1,6,24,70,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",33000
+0,"F",51,2,6,45,30,"Information","1-4 years of college","MIDWEST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",75000
+2,"F",42,2,6,55,0,"Information","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",80000
+1,"F",45,1,3,10,40,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",3000
+2,"F",25,1,6,36,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",42000
+0,"M",28,1,6,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","NORTHEAST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",80000
+1,"F",42,1,6,40,8,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",40000
+5,"F",25,0,3,48,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","Other","No health insurance coverage","27-39 weeks","Not a veteran",23000
+1,"F",46,1,6,40,20,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",65000
+0,"M",23,0,2,45,30,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","MIDWEST","Private School","White","With health insurance coverage","14-26 weeks","Not a veteran",38000
+3,"F",50,1,6,20,5,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",10000
+0,"M",54,1,6,48,40,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",70000
+2,"F",41,1,6,40,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","MIDWEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",23800
+0,"F",61,1,6,32,20,"Public Administration","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",68020
+1,"M",64,3,6,40,35,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",95000
+0,"M",46,1,6,40,30,"Retail Trade","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"F",51,1,6,50,45,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",46000
+2,"F",31,1,6,32,10,"Finance and Insurance, and Real Estate and Rental and Leasing","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",11200
+2,"F",37,1,6,45,30,"Educational Services, and Health Care and Social Assistance","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",54000
+1,"F",48,1,6,40,35,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",131000
+2,"M",45,1,6,84,15,"Retail Trade","1-4 years of college","MIDWEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",60000
+2,"M",47,2,3,16,60,"Transportation and Warehousing, and Utilities","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","27-39 weeks","Veteran",37000
+0,"M",21,0,4,32,30,"Retail Trade","1-4 years of college","SOUTH","Public School","White","No health insurance coverage","40-47 weeks","Not a veteran",10000
+0,"F",53,1,6,40,25,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",90000
+0,"M",54,1,6,50,60,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",60240
+0,"F",55,1,3,40,5,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",15000
+2,"F",46,2,6,40,7,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",44000
+0,"M",20,0,6,50,20,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",24000
+0,"M",22,0,6,40,25,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",60000
+0,"M",36,0,6,40,115,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",99000
+0,"M",58,1,6,40,0,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+1,"M",52,2,6,45,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",80000
+2,"M",49,0,6,35,30,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","SOUTH","Not Enrolled","Black","No health insurance coverage","50-52 weeks","Not a veteran",24000
+2,"M",42,1,6,60,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",110000
+0,"F",38,1,6,40,5,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+0,"M",64,0,6,24,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",27200
+0,"M",51,0,6,50,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+1,"F",40,1,6,43,35,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",32000
+2,"M",48,1,6,55,3,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",75000
+0,"F",21,0,6,30,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","WEST","Public School","Other","With health insurance coverage","50-52 weeks","Not a veteran",15600
+0,"F",23,0,4,40,45,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","Asian","With health insurance coverage","40-47 weeks","Not a veteran",32000
+0,"M",68,1,6,40,90,"Agriculture, Forestry, Fishing and Hunting, and Mining","no school or N/A","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"F",59,1,6,30,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"F",72,1,3,40,3,"Retail Trade","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",42000
+2,"M",45,1,3,12,5,"Other Services, Except Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",14400
+1,"F",27,1,3,40,10,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","WEST","Not Enrolled","Other","With health insurance coverage","27-39 weeks","Not a veteran",102000
+2,"F",58,1,4,20,60,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",20800
+0,"F",26,0,6,40,10,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","WEST","Public School","American Indian","With health insurance coverage","50-52 weeks","Not a veteran",29100
+1,"F",60,1,6,40,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",103000
+0,"M",52,0,6,40,22,"Public Administration","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",76050
+0,"F",42,0,6,40,20,"Information","1-12 years of pre-college","NORTHEAST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",22800
+2,"M",53,2,6,40,5,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+5,"F",51,1,6,70,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",446000
+0,"M",23,0,6,45,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Public School","White","No health insurance coverage","50-52 weeks","Not a veteran",15000
+0,"F",25,1,6,38,40,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",35000
+0,"M",21,0,6,30,5,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",5000
+0,"F",62,2,6,48,30,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",126000
+2,"M",48,1,6,40,45,"Information","1-4 years of college","NORTHEAST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",182000
+0,"F",32,2,6,40,37,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",70000
+1,"F",39,1,6,38,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",85000
+0,"F",18,0,1,25,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","1-13 weeks","Not a veteran",540
+1,"F",61,1,6,40,10,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",15000
+0,"F",28,2,6,40,40,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",29000
+1,"M",36,1,6,40,20,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",291000
+0,"F",65,1,2,3,1,"Educational Services, and Health Care and Social Assistance","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","14-26 weeks","Not a veteran",22000
+1,"F",59,1,6,70,1,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",37100
+0,"F",23,0,6,40,7,"Retail Trade","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",31200
+0,"M",57,1,3,40,20,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",64000
+1,"F",63,1,6,40,15,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",48500
+1,"F",32,0,6,36,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",67000
+1,"F",32,1,6,40,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",9900
+1,"M",40,0,6,45,15,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",77000
+2,"F",47,1,6,60,25,"Retail Trade","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",36000
+1,"F",52,2,6,60,5,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",426000
+0,"F",27,0,6,25,10,"Other Services, Except Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",13700
+0,"M",48,0,3,20,15,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","27-39 weeks","Not a veteran",13200
+2,"F",47,1,2,10,15,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","14-26 weeks","Not a veteran",10500
+3,"M",53,1,6,50,30,"Finance and Insurance, and Real Estate and Rental and Leasing","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",180000
+2,"M",36,1,6,40,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"M",28,0,6,36,10,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",20000
+0,"F",27,1,6,40,75,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+2,"M",39,1,6,40,2,"Other Services, Except Public Administration","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+1,"M",27,1,6,42,150,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"M",66,1,6,60,90,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",151700
+0,"M",28,0,6,20,25,"Educational Services, and Health Care and Social Assistance","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",10000
+0,"F",30,1,5,40,10,"Other Services, Except Public Administration","1-4 years of college","WEST","Not Enrolled","Asian","With health insurance coverage","48-49 weeks","Not a veteran",40000
+0,"M",48,0,6,40,30,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Not Enrolled","Black","No health insurance coverage","50-52 weeks","Not a veteran",32000
+3,"M",51,3,6,60,12,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",165000
+2,"M",43,1,6,50,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",65000
+0,"M",34,1,6,50,30,"Retail Trade","1-4 years of college","MIDWEST","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",28000
+0,"M",27,0,6,45,35,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Not Enrolled","Other","No health insurance coverage","50-52 weeks","Not a veteran",12000
+0,"F",63,1,6,38,45,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",91200
+0,"M",29,0,6,40,138,"Information","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",25000
+0,"M",25,0,6,40,25,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",12000
+1,"F",39,1,6,24,35,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",20000
+0,"F",50,1,6,20,30,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",85000
+0,"M",79,1,6,45,5,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",111700
+0,"F",59,2,6,70,25,"Educational Services, and Health Care and Social Assistance","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",321750
+2,"F",43,1,6,40,70,"Retail Trade","1-4 years of college","WEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",38000
+0,"F",64,2,6,8,10,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",12700
+1,"M",34,1,6,40,20,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","no school or N/A","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",75000
+0,"F",18,0,4,15,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","MIDWEST","Public School","White","With health insurance coverage","40-47 weeks","Not a veteran",3000
+0,"F",74,1,6,1,1,"Other Services, Except Public Administration","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",15400
+0,"F",17,0,1,10,20,"Retail Trade","1-12 years of pre-college","NORTHEAST","Private School","White","With health insurance coverage","1-13 weeks","Not a veteran",400
+2,"F",57,3,6,40,0,"Information","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",44800
+0,"F",61,2,6,40,45,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",111400
+0,"M",23,0,2,25,60,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","14-26 weeks","Not a veteran",20000
+2,"F",54,1,6,37,25,"Educational Services, and Health Care and Social Assistance","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",43000
+2,"M",41,1,6,40,20,"Educational Services, and Health Care and Social Assistance","5+ years of college","NORTHEAST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",95000
+0,"M",42,0,6,35,5,"Transportation and Warehousing, and Utilities","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45000
+0,"F",66,2,6,9,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",17800
+0,"F",24,0,6,40,20,"Other Services, Except Public Administration","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",12500
+0,"M",38,1,6,40,2,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+2,"M",48,1,6,55,8,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",55000
+2,"M",45,1,6,40,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",42000
+2,"F",54,3,6,40,50,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+3,"M",42,1,6,40,15,"Wholesale Trade","1-12 years of pre-college","WEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",28000
+0,"F",63,1,6,40,10,"Retail Trade","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",19200
+0,"F",56,1,6,20,0,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",9200
+0,"M",58,1,6,40,10,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","NORTHEAST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",38000
+2,"F",46,1,6,40,5,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","MIDWEST","Not Enrolled","American Indian","With health insurance coverage","50-52 weeks","Not a veteran",27000
+0,"M",63,1,3,45,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","27-39 weeks","Not a veteran",31200
+0,"M",21,0,6,20,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",6000
+2,"M",53,3,6,35,45,"Wholesale Trade","1-4 years of college","WEST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",60000
+0,"F",21,1,6,40,25,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45000
+1,"F",57,2,6,40,10,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",35000
+0,"F",46,1,6,40,15,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",33600
+3,"F",46,1,6,40,35,"Educational Services, and Health Care and Social Assistance","5+ years of college","MIDWEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",72000
+0,"M",26,0,6,40,15,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",16000
+0,"M",55,1,6,42,24,"Retail Trade","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",36000
+2,"M",52,1,6,45,38,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",225900
+0,"M",55,2,6,40,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","SOUTH","Not Enrolled","Black","No health insurance coverage","50-52 weeks","Veteran",15100
+2,"F",47,2,6,50,40,"Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+2,"F",40,2,6,40,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",35000
+1,"F",58,1,6,40,15,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",30000
+0,"M",55,2,6,25,5,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",78000
+7,"F",37,2,1,25,30,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","1-13 weeks","Not a veteran",3000
+2,"M",36,0,6,60,35,"Finance and Insurance, and Real Estate and Rental and Leasing","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",165000
+1,"M",47,1,6,50,45,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",110000
+0,"M",28,0,6,40,10,"Retail Trade","1-4 years of college","WEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",19200
+1,"F",58,2,6,40,15,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",46000
+0,"F",45,2,6,40,65,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",36600
+0,"F",57,1,6,43,25,"Finance and Insurance, and Real Estate and Rental and Leasing","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",72000
+0,"F",66,1,6,40,15,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40500
+0,"M",67,1,6,40,3,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","NORTHEAST","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",145000
+0,"F",58,1,6,37,5,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",34900
+2,"M",52,1,6,40,20,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",120000
+0,"M",64,1,6,40,10,"Information","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",71980
+1,"M",39,2,6,40,5,"Public Administration","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",5200
+0,"F",45,1,6,50,0,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",75000
+0,"F",22,0,2,8,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","SOUTH","Public School","Black","With health insurance coverage","14-26 weeks","Not a veteran",8000
+2,"M",34,2,6,80,30,"Wholesale Trade","1-4 years of college","MIDWEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",33000
+0,"F",56,1,6,40,55,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",25100
+0,"M",20,0,6,15,7,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","NORTHEAST","Public School","Other","With health insurance coverage","50-52 weeks","Not a veteran",10000
+0,"F",26,0,6,45,35,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",30000
+0,"M",26,1,5,40,45,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",25400
+0,"M",30,0,6,45,15,"Transportation and Warehousing, and Utilities","1-4 years of college","SOUTH","Private School","White","With health insurance coverage","50-52 weeks","Veteran",22500
+0,"M",23,0,6,6,45,"Retail Trade","1-4 years of college","NORTHEAST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",15000
+2,"M",44,2,4,40,40,"Information","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",37000
+3,"M",47,1,6,36,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",25300
+0,"M",22,0,6,27,15,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",3200
+2,"F",45,1,6,40,10,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","Other","No health insurance coverage","50-52 weeks","Not a veteran",13700
+0,"M",72,1,6,45,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",220700
+2,"M",52,1,6,40,15,"Public Administration","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",145000
+1,"M",76,1,4,16,90,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",34000
+0,"M",76,2,6,40,5,"Public Administration","1-12 years of pre-college","WEST","Not Enrolled","American Indian","With health insurance coverage","50-52 weeks","Not a veteran",48000
+0,"M",60,1,6,40,15,"Educational Services, and Health Care and Social Assistance","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",148000
+0,"F",51,0,2,30,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","14-26 weeks","Not a veteran",10100
+0,"F",36,0,6,40,5,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",601000
+0,"F",26,0,6,40,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"F",22,0,6,30,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",17000
+2,"M",38,1,6,40,10,"Transportation and Warehousing, and Utilities","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",16800
+0,"M",56,1,6,10,20,"Wholesale Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",20000
+0,"M",35,0,6,45,45,"Transportation and Warehousing, and Utilities","1-4 years of college","WEST","Public School","Asian","With health insurance coverage","50-52 weeks","Not a veteran",30000
+1,"M",54,1,6,40,2,"Other Services, Except Public Administration","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45000
+1,"F",60,1,4,40,12,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","40-47 weeks","Not a veteran",76000
+0,"M",65,1,6,60,10,"Finance and Insurance, and Real Estate and Rental and Leasing","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",297500
+0,"F",57,2,4,50,40,"Educational Services, and Health Care and Social Assistance","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",24000
+0,"F",63,3,6,10,5,"Other Services, Except Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",15400
+0,"F",19,0,6,10,5,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",1200
+0,"M",65,1,6,65,20,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",144200
+0,"M",61,2,6,40,45,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",92000
+0,"M",26,0,6,48,40,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",44000
+0,"F",53,0,6,40,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",68000
+1,"M",65,1,6,40,20,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",62000
+0,"M",23,0,6,52,5,"Other Services, Except Public Administration","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",35000
+0,"M",41,1,6,40,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",20000
+0,"M",55,3,6,40,30,"Public Administration","1-12 years of pre-college","WEST","Not Enrolled","American Indian","With health insurance coverage","50-52 weeks","Not a veteran",43000
+2,"M",43,1,6,40,15,"Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",45000
+0,"F",41,1,6,40,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",23000
+0,"F",76,1,6,35,35,"Other Services, Except Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",16900
+0,"F",71,2,6,40,5,"Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45200
+0,"F",23,1,6,35,35,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45000
+0,"F",65,1,6,40,15,"Retail Trade","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",20000
+0,"F",22,0,6,40,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+2,"F",33,1,6,40,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"M",32,1,3,20,10,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","NORTHEAST","Not Enrolled","Asian","With health insurance coverage","27-39 weeks","Not a veteran",3500
+0,"F",66,1,2,4,0,"Other Services, Except Public Administration","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","14-26 weeks","Not a veteran",16900
+2,"F",46,1,6,60,15,"Educational Services, and Health Care and Social Assistance","5+ years of college","MIDWEST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",240000
+0,"M",60,1,6,40,45,"Public Administration","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",167000
+2,"F",54,1,5,35,0,"Other Services, Except Public Administration","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",55000
+3,"M",52,3,6,66,20,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","American Indian","With health insurance coverage","50-52 weeks","Not a veteran",18000
+1,"F",45,1,3,40,0,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","Asian","With health insurance coverage","27-39 weeks","Not a veteran",30000
+0,"F",42,0,6,65,15,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",65000
+0,"M",74,1,6,40,15,"Wholesale Trade","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",139000
+1,"M",60,2,6,40,15,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+0,"M",47,0,6,50,30,"Wholesale Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",187750
+2,"F",49,1,6,35,5,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",28500
+0,"F",67,1,6,40,20,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",30000
+2,"F",47,1,6,45,0,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",92020
+0,"M",72,2,1,16,149,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","1-13 weeks","Veteran",22500
+1,"M",57,3,6,42,15,"Public Administration","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",82000
+0,"F",65,2,1,1,15,"Other Services, Except Public Administration","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","1-13 weeks","Not a veteran",10000
+3,"M",61,1,6,40,60,"Retail Trade","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"F",53,0,6,45,0,"Finance and Insurance, and Real Estate and Rental and Leasing","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",18700
+0,"F",20,0,6,35,20,"Retail Trade","1-4 years of college","WEST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",17500
+0,"M",58,1,6,20,45,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","WEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",12000
+0,"M",22,0,5,25,7,"Retail Trade","1-12 years of pre-college","MIDWEST","Public School","White","With health insurance coverage","48-49 weeks","Not a veteran",15000
+2,"M",38,1,6,50,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",74200
+0,"F",54,2,6,12,5,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",5000
+0,"F",62,1,6,40,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",49400
+4,"F",31,1,6,50,45,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",30000
+2,"M",42,1,6,40,20,"Other Services, Except Public Administration","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",154000
+1,"M",30,1,6,60,25,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Public School","Black","With health insurance coverage","50-52 weeks","Not a veteran",34000
+0,"M",46,0,6,55,40,"Retail Trade","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",150000
+0,"F",21,0,3,48,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","Other","No health insurance coverage","27-39 weeks","Not a veteran",23000
+3,"F",37,1,6,40,20,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",23000
+2,"F",54,1,6,30,10,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",20040
+1,"F",66,1,6,60,45,"Transportation and Warehousing, and Utilities","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",50000
+1,"M",44,0,6,40,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",35000
+2,"F",36,1,6,40,5,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","NORTHEAST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",117200
+5,"M",50,2,6,40,30,"Public Administration","1-4 years of college","NORTHEAST","Public School","Black","With health insurance coverage","50-52 weeks","Veteran",146400
+0,"M",66,1,6,40,3,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",32900
+0,"F",24,0,6,70,25,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",34500
+0,"F",29,0,5,28,25,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",10900
+0,"F",58,1,6,45,15,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",34700
+0,"F",55,1,6,40,10,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",35000
+0,"M",36,1,4,40,60,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","40-47 weeks","Not a veteran",18000
+2,"M",32,1,6,40,60,"Other Services, Except Public Administration","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",37000
+1,"M",63,1,6,40,45,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",10000
+0,"F",58,1,3,16,60,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",3000
+3,"M",38,1,6,40,30,"Transportation and Warehousing, and Utilities","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",66000
+0,"F",74,2,4,4,10,"Other Services, Except Public Administration","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",8900
+0,"F",42,1,2,40,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","14-26 weeks","Not a veteran",12000
+1,"F",42,1,6,40,60,"Information","1-4 years of college","MIDWEST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"M",69,1,6,40,20,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",75000
+0,"M",59,0,6,27,40,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",9300
+1,"M",68,1,6,2,0,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",28000
+1,"M",41,0,6,40,30,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+2,"M",26,1,6,30,40,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Not Enrolled","Black","No health insurance coverage","50-52 weeks","Not a veteran",13500
+2,"F",50,3,3,35,20,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","MIDWEST","Not Enrolled","Other","With health insurance coverage","27-39 weeks","Not a veteran",19000
+2,"M",43,2,6,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",46000
+3,"F",43,1,6,60,0,"Public Administration","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",27000
+2,"F",60,1,6,50,15,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",125000
+0,"F",55,1,6,45,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",30000
+1,"M",59,1,6,30,0,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",11000
+0,"F",65,1,5,44,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",62000
+0,"F",21,0,6,14,25,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","MIDWEST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",5500
+0,"F",63,1,6,45,35,"Retail Trade","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",47640
+0,"F",65,2,6,30,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",30400
+1,"M",36,0,6,40,35,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",30000
+0,"M",36,1,6,50,60,"Retail Trade","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",73000
+0,"M",18,0,2,20,5,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","SOUTH","Public School","White","With health insurance coverage","14-26 weeks","Not a veteran",4800
+0,"M",25,0,6,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"M",55,0,6,55,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",32001
+0,"F",61,1,6,40,10,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+2,"F",39,1,6,40,45,"Public Administration","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",78000
+3,"M",53,1,6,50,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","MIDWEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",88000
+0,"F",18,0,2,30,23,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","MIDWEST","Public School","Other","With health insurance coverage","14-26 weeks","Not a veteran",3400
+0,"M",24,0,5,45,45,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",25000
+0,"F",61,1,2,33,30,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","14-26 weeks","Not a veteran",4000
+0,"M",24,0,5,40,15,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","SOUTH","Public School","Other","With health insurance coverage","48-49 weeks","Not a veteran",18000
+0,"F",19,0,6,25,7,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","Other","No health insurance coverage","50-52 weeks","Not a veteran",3300
+1,"M",50,2,6,40,45,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","American Indian","With health insurance coverage","50-52 weeks","Veteran",66000
+1,"M",46,2,6,40,45,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",8000
+2,"M",49,1,6,40,90,"Wholesale Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",150000
+0,"F",61,0,4,30,10,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",240000
+0,"F",46,0,6,42,25,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",35000
+1,"F",56,1,6,40,10,"Educational Services, and Health Care and Social Assistance","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",1e+05
+0,"F",57,0,6,40,30,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",15800
+1,"F",53,1,6,50,8,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","MIDWEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",36000
+2,"M",54,1,6,40,4,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",26000
+0,"F",30,0,6,60,45,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",41000
+1,"F",52,1,6,40,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"M",41,1,6,38,4,"Educational Services, and Health Care and Social Assistance","1-4 years of college","NORTHEAST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Veteran",86000
+2,"F",45,1,6,40,45,"Educational Services, and Health Care and Social Assistance","5+ years of college","NORTHEAST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",229500
+0,"F",63,1,3,40,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","American Indian","No health insurance coverage","27-39 weeks","Not a veteran",80000
+2,"M",55,2,6,45,60,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",130020
+1,"M",48,1,6,40,10,"Wholesale Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",60000
+0,"M",18,0,2,40,0,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","NORTHEAST","Public School","White","No health insurance coverage","14-26 weeks","Not a veteran",3000
+1,"M",48,1,6,40,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",32000
+2,"F",46,1,6,35,12,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",42000
+0,"F",51,3,6,36,25,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",28000
+0,"F",42,1,6,40,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",444000
+0,"F",73,1,6,10,10,"Other Services, Except Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",22000
+1,"F",58,1,6,24,50,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",44200
+2,"M",35,1,6,45,60,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","NORTHEAST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",115000
+1,"F",57,1,6,40,15,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"M",56,1,6,25,60,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",23000
+2,"F",44,1,6,20,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45000
+0,"F",52,2,3,45,45,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",10000
+0,"F",30,1,6,53,24,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",20000
+1,"F",49,1,4,15,30,"Other Services, Except Public Administration","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","40-47 weeks","Not a veteran",10800
+1,"F",64,1,6,40,15,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",37400
+0,"F",37,0,4,40,10,"Wholesale Trade","1-4 years of college","WEST","Not Enrolled","Other","With health insurance coverage","40-47 weeks","Not a veteran",50000
+0,"M",54,3,6,41,15,"Public Administration","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",46000
+0,"M",61,1,6,40,25,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",20000
+0,"F",39,0,6,55,30,"Educational Services, and Health Care and Social Assistance","5+ years of college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",90000
+0,"M",68,1,4,40,10,"Retail Trade","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",25000
+0,"M",37,1,6,29,45,"Public Administration","1-4 years of college","SOUTH","Private School","White","No health insurance coverage","50-52 weeks","Not a veteran",35000
+0,"F",22,0,2,15,60,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Public School","Asian","With health insurance coverage","14-26 weeks","Not a veteran",6000
+0,"F",66,1,5,40,15,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",114500
+1,"M",36,0,6,40,75,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"M",65,1,6,45,60,"Wholesale Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",39500
+2,"F",36,1,6,40,5,"Retail Trade","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",32000
+0,"M",24,0,6,50,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",46000
+2,"M",51,1,6,75,15,"Transportation and Warehousing, and Utilities","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",433000
+0,"M",21,1,6,60,10,"Public Administration","1-12 years of pre-college","WEST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Veteran",40100
+0,"F",28,0,6,6,40,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Public School","Asian","With health insurance coverage","50-52 weeks","Not a veteran",3800
+1,"F",33,1,6,45,35,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",57000
+1,"M",64,1,4,30,15,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",1e+05
+0,"F",31,1,6,32,60,"Educational Services, and Health Care and Social Assistance","1-4 years of college","NORTHEAST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",28000
+1,"M",40,2,6,50,45,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",76000
+0,"M",37,1,6,43,4,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40400
+2,"M",38,1,6,40,15,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",52000
+0,"M",17,0,6,25,10,"Retail Trade","1-12 years of pre-college","MIDWEST","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",9000
+0,"M",18,0,2,12,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","NORTHEAST","Not Enrolled","Black","With health insurance coverage","14-26 weeks","Not a veteran",6000
+0,"M",20,0,6,40,5,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",13000
+0,"M",32,0,6,50,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",60000
+0,"F",56,1,6,9,12,"Retail Trade","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",9000
+0,"F",25,1,6,50,20,"Educational Services, and Health Care and Social Assistance","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",44000
+0,"M",45,2,6,40,5,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",33600
+1,"M",44,2,6,60,5,"Other Services, Except Public Administration","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+1,"M",32,1,6,60,123,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",30000
+2,"F",48,2,6,50,60,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"F",51,1,4,40,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","no school or N/A","WEST","Not Enrolled","Asian","With health insurance coverage","40-47 weeks","Not a veteran",30000
+0,"F",41,1,6,40,10,"Information","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45060
+3,"M",39,1,6,50,10,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",49600
+0,"M",23,0,6,38,22,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",28000
+0,"M",34,1,6,60,2,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",12000
+1,"F",51,1,6,40,40,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",16000
+4,"F",50,1,6,60,40,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",203000
+2,"M",36,1,6,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",65000
+0,"M",59,2,6,60,139,"Transportation and Warehousing, and Utilities","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",65000
+1,"M",63,1,3,20,75,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","27-39 weeks","Not a veteran",27800
+0,"M",24,0,6,30,30,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",108000
+1,"F",48,1,6,40,25,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",41000
+2,"F",45,1,6,40,40,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",41000
+1,"F",32,1,6,40,30,"Other Services, Except Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",65000
+0,"M",66,1,6,40,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",165000
+2,"F",46,1,6,50,1,"Educational Services, and Health Care and Social Assistance","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",57000
+0,"F",38,0,6,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",18000
+1,"M",30,1,6,32,12,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",25000
+2,"F",64,1,6,40,15,"Retail Trade","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",45000
+3,"F",26,1,6,50,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",45000
+4,"F",56,1,6,10,25,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",29300
+2,"M",54,1,6,50,20,"Educational Services, and Health Care and Social Assistance","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",1e+05
+1,"M",49,2,6,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",42000
+3,"F",36,2,6,75,50,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",48000
+0,"M",62,1,6,80,122,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",341000
+2,"F",38,2,6,72,5,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","50-52 weeks","Not a veteran",25000
+3,"F",50,1,6,45,30,"Educational Services, and Health Care and Social Assistance","5+ years of college","NORTHEAST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",75000
+0,"F",23,0,6,40,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",28000
+2,"F",45,3,6,40,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",42300
+0,"M",50,0,6,40,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","no school or N/A","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",19500
+0,"M",55,1,6,40,0,"Wholesale Trade","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",75200
+0,"M",50,1,3,40,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","WEST","Not Enrolled","White","No health insurance coverage","27-39 weeks","Not a veteran",50000
+0,"M",53,1,6,40,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",52000
+0,"F",60,0,6,45,0,"Other Services, Except Public Administration","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",38000
+2,"F",34,1,6,40,45,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",35000
+2,"F",51,2,6,35,20,"Educational Services, and Health Care and Social Assistance","5+ years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",98000
+0,"M",23,0,6,40,25,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",18000
+1,"F",30,0,6,60,20,"Public Administration","1-4 years of college","NORTHEAST","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",60000
+0,"M",59,1,6,50,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",180000
+0,"M",38,1,2,40,43,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","No health insurance coverage","14-26 weeks","Not a veteran",24000
+0,"M",74,1,5,40,0,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",55900
+3,"M",30,1,6,40,40,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",60000
+3,"F",22,0,6,40,10,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Not Enrolled","Black","No health insurance coverage","50-52 weeks","Not a veteran",9000
+0,"F",60,1,4,40,45,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","40-47 weeks","Not a veteran",25410
+0,"F",71,1,5,10,30,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",22900
+0,"F",31,0,6,35,60,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",33000
+1,"M",27,1,6,60,5,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",42500
+2,"M",43,1,6,40,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"M",63,1,6,25,75,"Transportation and Warehousing, and Utilities","5+ years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",250000
+2,"F",29,1,6,48,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",13000
+1,"F",49,2,4,32,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",40000
+2,"F",39,0,6,40,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",40000
+1,"M",56,1,6,50,90,"Retail Trade","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",100030
+0,"M",25,0,6,40,15,"Retail Trade","1-12 years of pre-college","WEST","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",22600
+1,"M",58,1,6,55,10,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",1e+05
+1,"F",44,1,6,55,5,"Finance and Insurance, and Real Estate and Rental and Leasing","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"M",76,1,5,17,35,"Other Services, Except Public Administration","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","48-49 weeks","Not a veteran",45400
+2,"M",37,0,2,40,25,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","14-26 weeks","Not a veteran",6000
+0,"F",64,1,6,25,30,"Retail Trade","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",24000
+0,"M",27,1,6,50,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+1,"F",45,2,6,60,6,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Veteran",221200
+0,"M",31,1,6,50,15,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",57000
+2,"M",36,0,4,70,30,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",35000
+0,"F",61,2,6,39,5,"Retail Trade","1-12 years of pre-college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",21000
+3,"M",36,1,6,50,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",77000
+3,"F",48,1,6,31,15,"Other Services, Except Public Administration","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",22200
+3,"M",32,2,6,45,75,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",36050
+0,"M",38,1,6,45,15,"Public Administration","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",43000
+0,"F",59,1,6,45,6,"Educational Services, and Health Care and Social Assistance","5+ years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",53000
+4,"F",31,0,4,40,10,"Wholesale Trade","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","40-47 weeks","Not a veteran",15000
+0,"F",49,1,6,32,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",32000
+1,"F",31,1,6,40,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",25000
+0,"F",51,2,6,40,15,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","WEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",41000
+3,"F",34,1,6,40,30,"Educational Services, and Health Care and Social Assistance","1-4 years of college","MIDWEST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",36000
+1,"M",65,1,1,10,30,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","no school or N/A","WEST","Not Enrolled","Asian","With health insurance coverage","1-13 weeks","Not a veteran",1400
+0,"F",25,0,6,35,25,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",20000
+2,"M",46,1,6,40,45,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"F",71,1,4,12,60,"Educational Services, and Health Care and Social Assistance","5+ years of college","WEST","Not Enrolled","Asian","With health insurance coverage","40-47 weeks","Not a veteran",54720
+0,"M",36,0,5,40,5,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","WEST","Not Enrolled","Other","With health insurance coverage","48-49 weeks","Not a veteran",2e+05
+0,"F",17,0,2,30,10,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-12 years of pre-college","WEST","Public School","Other","With health insurance coverage","14-26 weeks","Not a veteran",2100
+0,"M",56,1,6,40,30,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",40000
+0,"M",62,2,6,60,12,"Finance and Insurance, and Real Estate and Rental and Leasing","1-4 years of college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",426000
+0,"M",61,1,6,46,5,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","5+ years of college","MIDWEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",52000
+1,"F",48,1,6,40,15,"Educational Services, and Health Care and Social Assistance","5+ years of college","SOUTH","Not Enrolled","Black","With health insurance coverage","50-52 weeks","Not a veteran",46000
+0,"M",21,0,6,25,15,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Private School","White","With health insurance coverage","50-52 weeks","Not a veteran",4400
+1,"F",58,1,6,40,15,"Educational Services, and Health Care and Social Assistance","1-4 years of college","WEST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",121000
+0,"F",51,2,6,40,15,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",28600
+0,"F",19,0,5,20,20,"Arts, Entertainment, and Recreation, and Accommodation and Food Services","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","48-49 weeks","Not a veteran",6000
+0,"F",57,1,6,60,60,"Educational Services, and Health Care and Social Assistance","5+ years of college","NORTHEAST","Not Enrolled","Asian","With health insurance coverage","50-52 weeks","Not a veteran",601000
+0,"M",66,1,6,40,10,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",56950
+0,"M",19,0,4,30,15,"Retail Trade","1-4 years of college","SOUTH","Public School","White","With health insurance coverage","40-47 weeks","Not a veteran",10000
+1,"F",48,2,6,50,10,"Educational Services, and Health Care and Social Assistance","1-4 years of college","SOUTH","Not Enrolled","White","No health insurance coverage","50-52 weeks","Not a veteran",62000
+0,"M",75,1,6,44,20,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",62000
+0,"M",57,1,6,40,5,"Professional, Scientific, and Management, and Administrative, and Waste Management Services","1-12 years of pre-college","SOUTH","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",50000
+0,"F",58,2,6,40,20,"Educational Services, and Health Care and Social Assistance","1-4 years of college","NORTHEAST","Not Enrolled","White","With health insurance coverage","50-52 weeks","Not a veteran",62000
+2,"F",57,1,4,40,40,"Other Services, Except Public Administration","1-12 years of pre-college","NORTHEAST","Not Enrolled","White","With health insurance coverage","40-47 weeks","Not a veteran",24000
+0,"F",25,1,6,40,5,"Agriculture, Forestry, Fishing and Hunting, and Mining","1-4 years of college","MIDWEST","Public School","Other","With health insurance coverage","50-52 weeks","Not a veteran",40600
+0,"M",31,0,6,35,10,"Retail Trade","1-12 years of pre-college","SOUTH","Not Enrolled","Other","With health insurance coverage","50-52 weeks","Not a veteran",30000
+0,"F",61,2,4,38,50,"Educational Services, and Health Care and Social Assistance","1-12 years of pre-college","SOUTH","Public School","White","With health insurance coverage","40-47 weeks","Not a veteran",10000
