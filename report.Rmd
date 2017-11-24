@@ -54,7 +54,6 @@ plot(as.factor(df$SCHLTYPE))
 plot(df$SCHLTYPE_revised)
 ```
 
-## Response variable
 We dropped `INCWAGE` variable after realizing it was not very discriptive. We decided to use `INCTOT` as a response variable.
 ```{r}
 hist(df$INCTOT, breaks = 80)
@@ -64,4 +63,56 @@ hist(df$INCTOT, breaks = 80)
 nrow(df)
 write.csv(df, file='dataset.csv', col.names=T, row.names = F)
 ```
+
+```{r}
+# drop old variables
+dfn <- subset(df, select = -c(MARRNO, RACE, HCOVANY, IND, VETSTAT, PWSTATE2, EDUC, SCHLTYPE))
+# rename columns
+colnames(dfn) <- c("WEIGHT", "NUM_CHILD", "SEX", "AGE", "WEEKS_WORKED_NUMERIC", "NUM_HOURS_WEEK", "INCOME", "TRAVEL_TIME", "INDUSTRY", "EDUC", "STATE", "SCHL_TYPE", "NUM_MARR", "RACE", "HEALTH_INS", "WEEKS_WORKED", "VETERAN")
+head(dfn)
+```
+
+In the following script, we calculated the weighted (by `WEIGHT`) income for the observations with equal predictor variables.
+```{r}
+library(data.table)
+dt <- as.data.table(dfn)
+# group by predictor variables
+dt <- dt[,list(INCOME=weighted.mean(INCOME, WEIGHT)), setdiff(names(dt), c("WEIGHT", "INCOME"))]
+head(dt)
+```
+```{r}
+# save new dataset
+write.csv(dt, file='dataset_final.csv', col.names=T, row.names = F)
+```
+
+We still left with around 10,000 rows. 
+```{r}
+
+distributions <- function(dt) {
+  par(mfrow=c(4,4))
+  # show distributions of the variables
+  for (i in names(dt)) {
+    if (is.numeric(dt[[i]])) {
+      hist(dt[[i]], main = i)
+    } else {
+      plot(dt[[i]], main = i)
+    }
+  }
+}
+
+# visualise distributions
+distributions(dt)
+```
+The goal is to sample the dataset and maintain the distribution properties of the variable
+```{r}
+set.seed(1337)
+dts <- dt[sample(nrow(dt), 500), ]
+distributions(dts)
+```
+As we see, the general distribution properties are captured in the 500 observations subset.
+```{r}
+# save new dataset
+write.csv(dts, file='dataset_final_sample.csv', col.names=T, row.names = F)
+```
+
 
