@@ -1,0 +1,167 @@
+---
+title: "Analysis(Connor)"
+output: html_document
+---
+
+```{r}
+orig_data <- read.csv("dataset_final_sample(Connor).csv")
+colnames(orig_data)
+View(orig_data)
+orig_data <- orig_data[, !(colnames(orig_data) %in% c("WEEKS_WORKED_NUMERIC"))]
+str(orig_data)
+orig_data$NUM_MARR <- as.factor(orig_data$NUM_MARR)
+is.factor(orig_data$NUM_MARR)
+
+##Multiple Linear Regression Analysis##
+colnames(orig_data)
+summary(orig_data)
+mlr <- lm(orig_data$INCOME ~ ., data = orig_data )
+summary(mlr)
+summary(mlr)$sigma #standard error
+qf(0.95, df1 = 38, df2 = 461) #1.431182 < F-statistic = 6.878
+
+
+
+#t-test
+mlr_t <- lm(orig_data$INCOME ~ AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data =orig_data)
+summary(mlr_t)
+summary(mlr_t)$sigma
+qf(0.95, df1 = 8, df2 = 491) #1.957253
+plot(mlr_t)
+
+#partial F-test
+reduced <- lm(orig_data$INCOME ~ orig_data$NUM_CHILD + orig_data$SEX)
+anova(reduced,mlr)
+
+#vif test
+library(car)
+vif(mlr)
+vif(mlr)[1]
+test <- lm(NUM_CHILD ~. -INCOME, data = orig_data) 
+1/(1-summary(test)$r.squared)
+
+#backward elimination
+step(mlr, direction = "backward")
+
+#stepwise regression
+step(mlr, direction = "both")
+
+mlr_bs <- lm(orig_data$INCOME ~ SEX + AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data = orig_data)
+summary(mlr_bs)
+hist(mlr$residuals)
+qqnorm(mlr$residuals)
+
+library(MASS)
+b_bs <- boxcox(mlr_bs, lambda = seq(0,0.2,.1))
+boxcox_values_bs <- cbind(b_bs$x,b_bs$y)
+boxcox_values_bs[order(-b_bs$y),] #0.103030303
+value_bs <- boxcox_values_bs[order(-b_bs$y),][1,1]
+orig_data <- cbind(orig_data, orig_data$INCOME^value_bs)
+names(orig_data)[16] <- "Income_transform_bs"
+colnames(orig_data)
+mlr_transform_bs <- lm(orig_data$Income_transform_bs ~ SEX + AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data = orig_data)
+hist(mlr_transform_bs$residuals)
+qqnorm(mlr_transform_bs$residuals)
+plot(mlr_transform_bs)
+summary(mlr_transform_bs)
+
+#residual plots
+mlr_resid <- resid(mlr)
+plot(mlr)
+library(car)
+qqPlot(mlr$residuals, dist= "norm", col=palette()[1], ylab="Residual Quantiles", main="Normal Probability Plot", pch=19)
+hist(mlr$residuals)
+qqnorm(mlr$residuals)
+abline(0,0)
+
+#Transformation/boxcox
+library(MASS)
+b_orig <- boxcox(mlr, lambda = seq(0,0.2,.1))
+boxcox_values_orig <- cbind(b_orig$x,b_orig$y)
+boxcox_values_orig[order(-b_orig$y),] #0.010101010
+value_orig <- boxcox_values_orig[order(-b_orig$y),][1,1]
+orig_data <- cbind(orig_data, orig_data$INCOME^value_orig)
+names(orig_data)[17] <- "Income_transform_orig"
+View(orig_data)
+colnames(orig_data)
+mlr_transform_orig <- lm(orig_data$Income_transform_orig ~. -INCOME -Income_transform_bs, data = orig_data)
+qqPlot(mlr_transform_orig$residuals, dist= "norm", col=palette()[1], ylab="Residual Quantiles", main="Normal Probability Plot", pch=19)
+plot(mlr_transform_orig)
+hist(mlr_transform_orig$residuals)
+summary(mlr_transform_orig)
+
+#backward elimination
+step(mlr_transform_orig, direction = "backward")
+
+#stepwise regression
+step(mlr_transform_orig, direction = "both")
+
+mlr_transform_orig_bs <- lm(orig_data$Income_transform_orig ~ AGE + NUM_HOURS_WEEK + 
+    TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
+    WEEKS_WORKED, data = orig_data)
+summary(mlr_transform_orig_bs)
+plot(mlr_transform_orig_bs)
+
+#Outliers / Leverage / influential obs.
+library(car)
+plot(mlr_transform_orig_bs, pch = 18, col ="red", which = c(4)) 
+cook <- round(cooks.distance(mlr_transform_orig_bs), 5)
+sort(cook)
+f_50 <- qf(0.50, df1 = 10, df2 = nrow(orig_data) - 10 )
+f_50
+cook[cook > f_50]
+f_80 <- qf(0.20, df1 = 10, df2 = nrow(orig_data) - 10 )
+f_80
+length(cook[cook < f_80])
+
+lev <- hatvalues(mlr_transform_orig_bs)
+cutoff_lev <- 2 * 10 / nrow(orig_data)
+cutoff_lev
+lev[lev > cutoff_lev]
+length(lev[lev > cutoff_lev])
+
+stud_residual <- rstandard(mlr_transform_orig_bs)
+omit_stud <-  stud_residual[stud_residual < -2 | stud_residual > 2 | is.na(stud_residual)]
+omit_stud
+stud_residual[is.na(stud_residual)]
+length(stud_residual[stud_residual < -2 | stud_residual > 2 | is.na(stud_residual)])
+
+
+##omitting wrt y
+orig_data_temp <- orig_data
+orig_data_temp <- cbind(orig_data_temp, stud_residual)
+colnames(orig_data_temp)
+orig_data_stud_omit <- orig_data[!(orig_data_temp$stud_residual %in% omit_stud),]
+mlr_transform_orig_bs_omit <- lm(orig_data_stud_omit$Income_transform_orig ~ AGE + NUM_HOURS_WEEK + TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
+WEEKS_WORKED, data = orig_data_stud_omit)
+summary(mlr_transform_orig_bs_omit)
+plot(mlr_transform_orig_bs_omit)
+
+cook_1 <- round(cooks.distance(mlr_transform_orig_bs_omit), 5)
+f_50_1 <- qf(0.50, df1 = 10, df2 = nrow(orig_data_stud_omit) - 10 )
+f_50_1
+cook[cook > f_50_1]
+
+lev_1 <- hatvalues(mlr_transform_orig_bs_omit)
+cutoff_lev_1 <- 2 * 10 / nrow(orig_data_stud_omit)
+cutoff_lev_1
+omit_lev_1 <- lev_1[lev_1 > cutoff_lev_1]
+length(lev_1[lev_1 > cutoff_lev_1])
+
+stud_residual_1 <- rstandard(mlr_transform_orig_bs_omit)
+omit_stud_1 <-  stud_residual_1[stud_residual_1 < -2 | stud_residual_1 > 2 | is.na(stud_residual_1)]
+omit_stud_1
+stud_residual_1[is.na(stud_residual_1)]
+length(stud_residual_1[stud_residual_1 < -2 | stud_residual_1 > 2 | is.na(stud_residual_1)])
+
+##omitting wrt x
+orig_data_stud_lev_omit <- orig_data_stud_omit
+orig_data_stud_lev_omit <- cbind(orig_data_stud_lev_omit, lev_1)
+orig_data_stud_lev_omit <- orig_data[!(orig_data_stud_lev_omit$lev_1 %in% omit_lev_1),]
+mlr_transform_orig_bs_lev_omit <- lm(orig_data_stud_lev_omit$Income_transform_orig ~ AGE + NUM_HOURS_WEEK + TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
+WEEKS_WORKED, data = orig_data_stud_lev_omit)
+summary(mlr_transform_orig_bs_lev_omit)
+plot(mlr_transform_orig_bs_lev_omit)
+
+```
+
