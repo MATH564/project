@@ -67,9 +67,9 @@ write.csv(df, file='dataset.csv', col.names=T, row.names = F)
 
 ```{r}
 # drop old variables
-dfn <- subset(df, select = -c(MARRNO, RACE, HCOVANY, IND, VETSTAT, PWSTATE2, EDUC, SCHLTYPE))
+dfn <- subset(df, select = -c(MARRNO_revised, RACE, HCOVANY, IND, VETSTAT, PWSTATE2, EDUC, SCHLTYPE))
 # rename columns
-colnames(dfn) <- c("WEIGHT", "NUM_CHILD", "SEX", "AGE", "WEEKS_WORKED_NUMERIC", "NUM_HOURS_WEEK", "INCOME", "TRAVEL_TIME", "INDUSTRY", "EDUC", "STATE", "SCHL_TYPE", "NUM_MARR", "RACE", "HEALTH_INS", "WEEKS_WORKED", "VETERAN")
+colnames(dfn) <- c("WEIGHT", "NUM_CHILD", "SEX", "AGE", "NUM_MARR", "WEEKS_WORKED_NUMERIC", "NUM_HOURS_WEEK", "INCOME", "TRAVEL_TIME", "INDUSTRY", "EDUC", "DIVISION", "SCHL_TYPE", "RACE", "HEALTH_INS", "WEEKS_WORKED", "VETERAN")
 head(dfn)
 ```
 
@@ -111,9 +111,22 @@ dts <- dt[sample(nrow(dt), 500), ]
 distributions(dts)
 ```
 As we see, the general distribution properties are captured in the 500 observations subset.
+
+# Linear regression analysis
+
 ```{r}
-# save new dataset
-write.csv(dts, file='dataset_final_sample.csv', col.names=T, row.names = F)
+orig_data <- dts[, !(colnames(dts) %in% c("WEEKS_WORKED_NUMERIC"))]
+orig_data$NUM_MARR <- as.factor(orig_data$NUM_MARR)
 ```
+
+TODO: I think that before jumping into the linear regression analysis, we should study variables a little bit more by vizualizing them and plotting the relationship with the response variable. 
+
+```{r}
+mlr <- lm(orig_data$INCOME ~ ., data = orig_data )
+summary(mlr)
+summary(mlr)$sigma #standard error
+qf(0.95, df1 = 38, df2 = 461)
+```
+
 
 
