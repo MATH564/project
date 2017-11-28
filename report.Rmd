@@ -4,6 +4,7 @@ output: html_notebook
 ---
 
 # Data preparation and visualization
+**bold text** 
 
 ```{r}
 df <- read.csv('dataset.csv')
