@@ -308,7 +308,7 @@ Comments:
 (1) Applying backward elimination on "mlr_transform_orig" model reveals that using AGE, NUM_HOURS_WEEK, TRAVEL_TIME, INDUSTRY, EDUC, DIVISION, SCHL_TYPE, HEALTH_INS, and WEEKS_WORKED yields the best model.
 
 
-#stepwise regression applied on "mlr_transform_orig" model
+# stepwise regression applied on "mlr_transform_orig" model
 
 ```{r}
 step(mlr_transform_orig, direction = "both")
@@ -328,7 +328,7 @@ Comments:
 (1) Ran regression on box-cox transformed income using variables selected by both stepwise regression and backward elimination applied on "mlr_transform_orig" model.
 (2) "mlr_transform_orig" model has adjusted R^2 equal to 0.5848
 
-#Cook's Distance Measure plot of "mlr_transform_orig_bs" model
+# Cook's Distance Measure plot of "mlr_transform_orig_bs" model
 
 ```{r}
 library(car)
@@ -369,6 +369,7 @@ summary(mlr_transform_orig_bs_omit)
 ```
 Comments:
 (1) Ran regression on box-cox transformed income using AGE, NUM_HOURS_WEEK, TRAVEL_TIME, INDUSTRY, EDUC, DIVISION, SCHL_TYPE, HEALTH_INS, and WEEKS_WORKED variables after dropping 28 observations that were classified as potential outliers.
+(2) "mlr_transform_orig_bs" model has adjusted R^2 equal to 0.6783.
 
 
 ```{r}
@@ -389,14 +390,7 @@ length(lev[lev > cutoff_lev]) #293 observations that are associated with large l
 Comments: There are 293 observations that are associated with large leverage values. We believe that large leverage values are less of a concern. 
 
 
-```{r}
+# Conclusion:
+Our "mlr" model has adjusted R^2 = 0.3092 and F-test indicates that the overall model is significant at alpha=0.05. However, plotting residuls reveal that "mlr" model doesn't satisfy the regression assumptions. "mlr_t" model doesn't do any better than "mlr" model in terms of adjusted R^2 because they have same adjusted R^2 value. Running vif test reveal that "mlr" model doesn't seem to exhibit any serious multicollinearity among dependent variables. We can further narrow down our model by runnning both backward elimination and stepwise regression on "mlr" model. Both methods leave us with SEX, AGE, NUM_HOURS_WEEK, EDUC, and DIVISION variables to run regression on income variable. "mlr_bs" model does slightly better than "mlr" model in terms of adjusted R^2 because now adjusted R^2 is 0.3108, but plot of residuals shows that "mlr_bs" model still doesn't satisfy the regression assumption. In order to meet the regression assumptions requirement, we had to transform our income, depedent variable, using box-cox transformation mathod. Applying box-cox transformation on "mlr_bs" model gives us "mlr_transform_bs" model, which has residuals normally distributed and adjusted R^2 equal to 0.503. However, plot of residuals doesn't seem to quite satisfy the regression assumption even though distribution of residuals way more closely resembles noraml distribution than "mlr" or "mlr_bs" model. 
 
-```
-
-```{r}
-
-```
-
-```{r}
-
-```
+It seems that we can do better by applying boxcox transformation on "mlr" model(the original model) first before applying stepwise regression or backward elimination method. If we box-cox transform our income variable first, we get "mlr_transform_orig" model, which has adjusted R^2 is equal to 0.5836. Then, we sequentially apply stepwise regression or backward elimination method on "mlr_transform_orig" model. Both methods give us two identical models using same independent variables. Finally, we can test for influential observations wrt both y and x values. Cook's distance measure test indicate that we don't seem to have any influential observations wrt both x and y values. However, applying studentized residuals statistical test on "mlr_transform_orig" model reveal that we have 28 potential outliers that need to be taken care of. We decided to exclude those 28 outliers and ran a new regression using reduced data set. At last, we have achieved our best model so far. "mlr_transform_orig_bs" model has adjusted R^2 equal to 0.6783, and plots of residuals approximately satisfies the regression assumption even though we have few observations that are possibly outliers wrt to either y or x values.  
