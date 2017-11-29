@@ -134,7 +134,7 @@ Comments:
 qf(0.95, df1 = 38, df2 = 461)
 ```
 Comments: 
-(1) Running F-test on "mlr" model reveals that the model is significantn at alpha = 0.05 because F-statistic of the model(6.878) is greater than F(0.05) = 1.431182. Also, p-value is close to being 0. 
+(1) Running F-test on "mlr" model reveals that the model is significant at alpha = 0.05 because F-statistic of the model(6.878) is greater than F(0.05) = 1.431182. Also, p-value is close to being 0. 
 
 # plot "mlr"
 
@@ -143,6 +143,8 @@ plot(mlr)
 ```
 Comments:
 (1) Four plots above shows that our model does not satisfy the regression assumptions
+(2) Specifically, the Residuals vs. Fitted Values plot shows an obvious pattern that fans out as the fitted values increase, showing that the variance of the error terms are not constant. 
+(3) The Normal Probability Plot shows curvature toward the ends, indicating that the error terms are not normally distributed. 
 
 # Multiple Linear Regression: "mlr_t" model
 
@@ -169,6 +171,7 @@ plot(mlr_t)
 ```
 Comments:
 (1) Four plots above shows that our model does not satisfy the regression assumptions
+(2) Similarly to the mlr model above, The Residuals vs. Fitted Values plot, as well as the Normal Probability Plot show variations from the expected plots, indicating the error terms are not normally distributed with constant variance. 
 
 # vif test (multicollinearity test)
 
@@ -188,6 +191,7 @@ step(mlr, direction = "backward")
 ```
 Comments:
 (1) Running backward elimination method reveals that we should include SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION as our independent variables. 
+(2) It should be noted that these variables are the same as the significant variables chosen for the mlr_t test above, with the addition of the SEX variable here. 
 
 
 # stepwise regression
@@ -197,6 +201,7 @@ step(mlr, direction = "both")
 ```
 Comments:
 (1) Running stepwise regression method reveals that we should include SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION as our independent variables. 
+(2) This is the same conclusion drawn from the backward elimination. 
 
 # Multiple Linear Regression: "mlr_bs" model
 
@@ -214,14 +219,15 @@ Comments:
 plot(mlr_bs)
 ```
 Comments:
-(1) Four plots show that our "mlr_bs" model don't satisfy the regression assumptions.         
+(1) Although the adjusted R^2 was slightly improved from the mlr and mlr_t models, the four plots still show that our "mlr_bs" model doesn't satisfy the regression assumptions.  
+
 # histogram plot of "mlr_bs" model's residuals.
 
 ```{r}
-hist(mlr$residuals)
+hist(mlr_bs$residuals)
 ```
 Comments:
-(1) Plot of residuals reveal that they are definitely not distributed normally. 
+(1) Plot of residuals confirms that they are definitely not distributed normally, but in fact are positively skewed. 
 
 # Finding boxcox transformation's value of lambda for "mlr_bs" model
 
@@ -247,7 +253,7 @@ summary(mlr_transform_bs)
 ```
 Comments:
 (1) Ran regression on box-cox transformed income using SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION variables. 
-(2) Our new "mlr_transform_bs" has adjusted R^2 equal to 0.503.
+(2) Our new "mlr_transform_bs" has adjusted R^2 equal to 0.503. This is improved from all previous models. 
 
 # general plot of "mlr_transform_bs" model
 
@@ -256,6 +262,7 @@ plot(mlr_transform_bs)
 ```
 Comments:
 (1) "mlr_transform_bs" model seem to not quite satisfy the regression assumptions.
+(2) There are, however, improvements in the Normal Probability Plot and Residuals vs. Fitted Values plot, indicating that this model more accurately following the assumptions of constant variance and normality than the previous models discussed. 
 
 # Plot of "mlr_transform_bs" model's residuals
 
@@ -263,10 +270,9 @@ Comments:
 hist(mlr_transform_bs$residuals)
 ```
 Comments:
-(1) Histogram plot above can be said appproximately normal. 
+(1) Histogram plot above can be said appproximately normal, further indicating that the normality assumption holds for the transformed model. 
 
 # boxcox transformation on "mlr" model
-
 ```{r}
 library(MASS)
 b_orig <- boxcox(mlr, lambda = seq(0,0.2,.1))
@@ -281,7 +287,8 @@ summary(mlr_transform_orig)
 ```
 Comments:
 (1) Ran regression on box-cox transformed income using all the independent variables.
-(2) "mlr_transform_orig" model's adjusted R^2 is equal to 0.5836
+(2) "mlr_transform_orig" model's adjusted R^2 is equal to 0.5836.
+(3) This adjusted R^2 is improved from the previous model. 
 
 # plot of "mlr_transform_orig" model
 
@@ -290,6 +297,8 @@ plot(mlr_transform_orig)
 ```
 Comments:
 (1) Looking at four plots reveal that "mlr_transform_orig" model doesn't quite satisfy the regression assumptions. 
+(2) The Normal Probability Plot appears fairly linear, indicating the normality assumption is satisfied. 
+(3) The Residials vs. Fitted Values plot doesn't appear to have any obvious patterns, with no clear indication that the constant variance assumption may be invalidated. 
 
 # histogram plot of "mlr_transform_orig" model's residuals
 
@@ -315,6 +324,7 @@ step(mlr_transform_orig, direction = "both")
 ```
 Comments:
 (1) Applying backward elimination on "mlr_transform_orig" model reveals that using AGE, NUM_HOURS_WEEK, TRAVEL_TIME, INDUSTRY, EDUC, DIVISION, SCHL_TYPE, HEALTH_INS, and WEEKS_WORKED yields the best model.
+(2) Again, the stepwise regression picked out the same variables as the backward elimination model. It is notable that these variables are different than the ones picked out from the non-transformed data: SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION.
 
 # Multiple linear regression: "mlr_transform_orig_bs" model  
 
@@ -326,7 +336,7 @@ summary(mlr_transform_orig_bs)
 ```
 Comments:
 (1) Ran regression on box-cox transformed income using variables selected by both stepwise regression and backward elimination applied on "mlr_transform_orig" model.
-(2) "mlr_transform_orig" model has adjusted R^2 equal to 0.5848
+(2) "mlr_transform_orig_bs" model has adjusted R^2 equal to 0.5848. This is approximately equal to the adjusted R^2 value from the "mlr_transform_orig" model. 
 
 # Cook's Distance Measure plot of "mlr_transform_orig_bs" model
 
@@ -369,7 +379,7 @@ summary(mlr_transform_orig_bs_omit)
 ```
 Comments:
 (1) Ran regression on box-cox transformed income using AGE, NUM_HOURS_WEEK, TRAVEL_TIME, INDUSTRY, EDUC, DIVISION, SCHL_TYPE, HEALTH_INS, and WEEKS_WORKED variables after dropping 28 observations that were classified as potential outliers.
-(2) "mlr_transform_orig_bs" model has adjusted R^2 equal to 0.6783.
+(2) "mlr_transform_orig_bs" model has adjusted R^2 equal to 0.6783. This is notably increased from the 0.5848 value before the outliers were dropped. 
 
 
 ```{r}
@@ -377,6 +387,7 @@ plot(mlr_transform_orig_bs_omit)
 ```
 Comments:
 (1) 4 plots above seem to indicate that "mlr_transform_orig_bs_omit" model satisfy regresion assumptions. 
+(2) The Normal Probability Plot is very linear, and the Residuals vs. Fitted Values Plot shows no patterns, indicating validation for the regression assumptions of normalilty and constant variance of the error terms. 
 
 # Leverage values for "mlr_transform_orig_bs" model
 
@@ -387,7 +398,8 @@ cutoff_lev
 lev[lev > cutoff_lev]
 length(lev[lev > cutoff_lev]) #293 observations that are associated with large leverage values
 ```
-Comments: There are 293 observations that are associated with large leverage values. We believe that large leverage values are less of a concern. 
+Comments: 
+(1) There are 293 observations that are associated with large leverage values. We believe that large leverage values are less of a concern. 
 
 
 # Conclusion:
