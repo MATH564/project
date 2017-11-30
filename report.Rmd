@@ -115,10 +115,19 @@ After all preprocessing operations, our dataset contained 16 variables:
 | NUM_CHILD     | Counts the number of own children (of any age or marital status) residing with each individual. Includes step-children and adopted children as well as biological children.
 | SEX           | Reports whether the person was male or female.
 | AGE           | Reports the person's age in years as of the last birthday.
-| EDUC          | Reports the person's education level
-
-*TODO: Please finish the description*
-
+| EDUC          | Reports the person's education level.
+| NUM_MARR      | Reports the number of times ever-married persons have been married.
+| NUM_HOURS_WEEK| Reports the usual number of hours the person earned per week.
+| TRAVEL_TIME   | Reports the number of minutes it usually took the person to get home from work.
+| INDUSTRY      | Reports the type of industry in which the person performed an occupation. Persons who worked in multiple industries were asked to report from which they earned the most money. Unemployed persons were to report their most recent industry. 
+| DIVISION      | Reports the region of the country that the person's primary workplace is located. 
+| SCHL_TYPE     | Reports whether the person attended public or private school, if they were enrolled at all. 
+| RACE          | Reports the race of the person.
+| HEALTH_INS    | Reports whether or not the person has health insurance coverage.
+| WEEKS_WORKED  | Reports the number of weeks the person worked last year, intervalled. 
+| WEEKS_WORKED_NUMERIC| Reports the number of week the person worked last year.
+| VETERAN       | Reports whether or not the person is a veteran.
+| INCOME        | Reports the total person's pre-tax personal income from the previous year. This is the response variable in the analysis. 
 
 # Multiple Linear Regression Analysis: 
 
