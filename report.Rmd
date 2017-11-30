@@ -1,10 +1,14 @@
 ---
-title: "Stats project report"
-output: html_notebook
+title: "Income Regression Analysis: Project report"
+output: 
+  html_notebook:
+    toc: true
+    theme: united
 ---
 
-# Data preparation and visualization
-**bold text** 
+# Data preparation
+
+## Preprocessing
 
 ```{r}
 df <- read.csv('dataset.csv')
@@ -59,11 +63,6 @@ We dropped `INCWAGE` variable after realizing it was not very discriptive. We de
 ```{r}
 hist(df$INCTOT, breaks = 80)
 ```
-```{r}
-# save data
-nrow(df)
-write.csv(df, file='dataset.csv', col.names=T, row.names = F)
-```
 
 ```{r}
 # drop old variables
@@ -80,10 +79,6 @@ dt <- as.data.table(dfn)
 # group by predictor variables
 dt <- dt[,list(INCOME=weighted.mean(INCOME, WEIGHT)), setdiff(names(dt), c("WEIGHT", "INCOME"))]
 head(dt)
-```
-```{r}
-# save new dataset
-write.csv(dt, file='dataset_final.csv', col.names=T, row.names = F)
 ```
 
 We still left with around 10,000 rows. 
@@ -112,65 +107,47 @@ distributions(dts)
 ```
 As we see, the general distribution properties are captured in the 500 observations subset.
 
-# Multiple Linear Regression Analysis: "mlr" model
+## Documentation
+After all preprocessing operations, our dataset contained 16 variables:
+
+| Variable      | Description |
+|---------------|-------------------------------------------------------------|
+| NUM_CHILD     | Counts the number of own children (of any age or marital status) residing with each individual. Includes step-children and adopted children as well as biological children.
+| SEX           | Reports whether the person was male or female.
+| AGE           | Reports the person's age in years as of the last birthday.
+| EDUC          | Reports the person's education level
+
+*TODO: Please finish the description*
+
+
+# Multiple Linear Regression Analysis: 
+
+## "Preliminary" model
+
+In this first model, we decided to run multiple regression on income using all 14 of independent variables in the dataset. But before building the model, we made some final preprocessing steps:
+
+(1) `WEEKS_WORKED_NUMERIC` variable has been removed from the data set
+(2) `NUM_MARR` variable is converted from numerical variable to categorical variable
+(3) long industry names shortened for prettier model summaries
 
 ```{r}
 orig_data <- read.csv("dataset_final_sample(Connor).csv")
 orig_data <- orig_data[, !(colnames(orig_data) %in% c("WEEKS_WORKED_NUMERIC"))]
+orig_data$INDUSTRY <- sapply(orig_data$INDUSTRY, function(x) substr(x, 0, 60))
 orig_data$NUM_MARR <- as.factor(orig_data$NUM_MARR)
 mlr <- lm(orig_data$INCOME ~ ., data = orig_data )
 summary(mlr)
 ```
-Comments: 
-(1) WEEKS_WORKED_NUMERIC variable has been removed from the data set 
-(2) NUM_MARR variable is converted from numerical variable to categorical variable
-(3) Ran multiple regression on income using all the independent variables in the dataset
-(4) Adjusted R^2 turned out to be 0.3092
+For this model, $\bar{R}^2$ turnes out to be $0.3092$, which means that the model fails to describe the data accurately. 
 
-
-# F test and p-value for "mlr" model
+### F test and p-value for "preliminary" model
 
 ```{r}
 qf(0.95, df1 = 38, df2 = 461)
 ```
-Comments: 
-(1) Running F-test on "mlr" model reveals that the model is significantn at alpha = 0.05 because F-statistic of the model(6.878) is greater than F(0.05) = 1.431182. Also, p-value is close to being 0. 
+Running F-test on "mlr" model reveals that the model is significant at alpha = 0.05 because F-statistic of the model ($6.878$) is greater than $F(0.05) = 1.431182$. Also, p-value is close to being $0$. 
 
-# plot "mlr"
-
-```{r}
-plot(mlr)
-```
-Comments:
-(1) Four plots above shows that our model does not satisfy the regression assumptions
-
-# Multiple Linear Regression: "mlr_t" model
-
-```{r}
-mlr_t <- lm(orig_data$INCOME ~ AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data =orig_data)
-summary(mlr_t)
-```
-Comments:
-(1) Ran multiple regression on income using variables that were statistically signifcant in the "mlr" model. Those independent variables include AGE, NUM_HOURS_WEEK, EDUC, DIVISION
-(2) Adjusted R^2 turned out to be 0.3092, which is the same as the one we got from "mlr" model.  
-
-# F test for "mlr_t" model
-
-```{r}
-qf(0.95, df1 = 8, df2 = 491)
-```
-Comments:
-(1) "mlr_t" model is statistically significant because F-statistic: 28.9 is greater than F(alpha = 0.05) = 1.957253
-
-# Plot "mlr_t"
-
-```{r}
-plot(mlr_t)
-```
-Comments:
-(1) Four plots above shows that our model does not satisfy the regression assumptions
-
-# vif test (multicollinearity test)
+### `VIF` test (multicollinearity test)
 
 ```{r}
 library(car)
@@ -178,219 +155,208 @@ vif(mlr)
 mean(vif(mlr)[,1]) # mean of vifs = 1.6133
 max(vif(mlr)[,1]) # maximum value of vifs = 2.964278
 ```
-Comments:
-(1) Since mean of vifs = 1.6133 is not substantially greater than 1 and maximum value of vifs = 2.964278 is less than 10, we can conclude that our "mlr" model doesn't exhibit multicollinearity.
+Since mean of vifs = $1.6133$ is not substantially greater than $1$ and maximum value of vifs = $2.964278$ is less than $10$, we can conclude that our "preliminary" model doesn't exhibit multicollinearity.
 
-# backward elimination
+### Residual analysis of "preliminary" model
+
+```{r}
+# Split the plotting panel into a 2 x 2 grid
+par(mfrow = c(2, 2), pch = 16, cex = .5)
+plot(mlr)
+```
+
+Four plots above shows that our model does not satisfy the regression assumptions:
+
+* Specifically, the **Residuals vs. Fitted Values** plot shows an obvious pattern that fans out as the fitted values increase, showing that the variance of the error terms are not constant. 
+* The Normal Probability Plot shows curvature toward the ends, indicating that the error terms are not normally distributed. 
+
+
+## "Manual" model
+
+For the second model, we decided to select variables that passed 95% significance test on the "preliminary" model. They are `AGE`, `NUM_HOURS_WEEK`, `EDUC` and `DIVISION`.
+
+```{r}
+mlr_t <- lm(orig_data$INCOME ~ AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data =orig_data)
+summary(mlr_t)
+```
+For this model, $\bar{R}^2$ turned out to be $0.3092$, which is the same as the one we got from "preliminary" model. It means that by reducing the dimensionality, we did not loose much information about the predicted variable.
+
+### F test for "manual" model
+
+```{r}
+qf(0.95, df1 = 8, df2 = 491)
+```
+"Manual" model is statistically significant because F-statistic: $28.9$ is greater than $F(alpha = 0.05) = 1.957253$
+
+### Plot "manual" model
+
+```{r}
+par(mfrow = c(2, 2), pch = 16, cex = .5)
+plot(mlr_t)
+```
+Four plots above shows that the second model does not satisfy the regression assumptions. Similarly to the first model, The **Residuals vs. Fitted Values** plot, as well as the **Normal Probability Plot** show variations from the expected plots, indicating the error terms are not normally distributed with constant variance. 
+
+## Automatic model building
+
+### Backward elimination
 
 ```{r}
 step(mlr, direction = "backward")
 ```
-Comments:
-(1) Running backward elimination method reveals that we should include SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION as our independent variables. 
+Running backward elimination method reveals that we should include `SEX`, `AGE`, `NUM_HOURS_WEEK`, `EDUC`, `DIVISION` as our independent variables. It should be noted that these variables are the same as the significant variables chosen for the manual model above, with the addition of the `SEX` variable here. 
 
-
-# stepwise regression
+### Stepwise regression
 
 ```{r}
 step(mlr, direction = "both")
 ```
-Comments:
-(1) Running stepwise regression method reveals that we should include SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION as our independent variables. 
 
-# Multiple Linear Regression: "mlr_bs" model
+Running stepwise regression method reveals that we should include `SEX`, `AGE`, `NUM_HOURS_WEEK`, `EDUC`, `DIVISION` as our independent variables. This is the same conclusion drawn from the backward elimination. 
 
+## Multiple Linear Regression: "Automatic" model
+
+Automatic model building procedure suggested that we should use `SEX`, `AGE`, `NUM_HOURS_WEEK`, `EDUC`, `DIVISION` as our independent variables. 
 ```{r}
 mlr_bs <- lm(orig_data$INCOME ~ SEX + AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data = orig_data)
 summary(mlr_bs)
 ```
-Comments:
-(1) Ran regression on income using variables that conform to both backward elimination and stepwise regression results discussed above. Those independent variables include SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION. 
-(2) Adjusted R^2 turned out to be 0.3108, which is slightly better than "mlr" model. 
+Adjusted $\bar{R}^2$ turned out to be $0.3108$, which is slightly better than "mlr" model. 
 
-# plot of "mlr_bs" model
+### Residual analysis of "automatic" model
+
+#### Residual plots
 
 ```{r}
+par(mfrow = c(2, 2), pch = 16, cex = .5)
 plot(mlr_bs)
 ```
-Comments:
-(1) Four plots show that our "mlr_bs" model don't satisfy the regression assumptions.         
-# histogram plot of "mlr_bs" model's residuals.
+Although the $\bar{R}^2$ was slightly improved compared to the prior models, the residual plots still show that our model doesn't satisfy the regression assumptions.  
+
+#### Histogram plot of "automatic" model's residuals.
 
 ```{r}
-hist(mlr$residuals)
+hist(mlr_bs$residuals, col = "lightgray")
 ```
-Comments:
-(1) Plot of residuals reveal that they are definitely not distributed normally. 
 
-# Finding boxcox transformation's value of lambda for "mlr_bs" model
+Plot of residuals confirms that they are definitely not distributed normally, but in fact are positively skewed. We can try to apply some transformations to normalize the residuals.
+
+### Finding Box-Cox transformation's value of lambda
 
 ```{r}
 library(MASS)
-b_bs <- boxcox(mlr_bs, lambda = seq(0,0.2,.1))
-b_bs
+b_bs <- boxcox(mlr, lambda = seq(0,0.2,.1))
 boxcox_values_bs <- cbind(b_bs$x,b_bs$y)
-boxcox_values_bs[order(-b_bs$y),]
 value_bs <- boxcox_values_bs[order(-b_bs$y),][1,1]
-value_bs # 0.1030303
+value_bs # 0.1010101
 ```
-Comments:
-(1) Running box-cox test reveals that we should use lambda = 0.1030303 for our transformation on our dependent variable which is income. As you can see from above plot, maximum likelihood estimation has the highest peak at lambda = 0.1030303
+Running Box-Cox test reveals that we should use $\lambda =0.1010101$ for our transformation on our dependent variable which is income. As you can see from above plot, maximum likelihood estimation has the highest peak at $\lambda = 0.1010101$.
 
-# boxcox transformation on "mlr_bs" model
+## Box-Cox transformed model
+
+We created a new model using transformed predicted variable. Re-running backward elimination again (steps omitted) showed that we should include `AGE`, `NUM_HOURS_WEEK`, `TRAVEL_TIME`,`INDUSTRY`, `EDUC`, `DIVISION`, `SCHL_TYPE`, `HEALTH_INS`, `WEEKS_WORKED`. It is notable that these variables are different than the ones picked out from the non-transformed data: `SEX`, `AGE`, `NUM_HOURS_WEEK`, `EDUC`, `DIVISION`.
 
 ```{r}
-orig_data <- cbind(orig_data, orig_data$INCOME^value_bs)
-names(orig_data)[16] <- "Income_transform_bs"
-mlr_transform_bs <- lm(orig_data$Income_transform_bs ~ SEX + AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data = orig_data)
-summary(mlr_transform_bs)
-```
-Comments:
-(1) Ran regression on box-cox transformed income using SEX, AGE, NUM_HOURS_WEEK, EDUC, DIVISION variables. 
-(2) Our new "mlr_transform_bs" has adjusted R^2 equal to 0.503.
-
-# general plot of "mlr_transform_bs" model
-
-```{r}
-plot(mlr_transform_bs)
-```
-Comments:
-(1) "mlr_transform_bs" model seem to not quite satisfy the regression assumptions.
-
-# Plot of "mlr_transform_bs" model's residuals
-
-```{r}
-hist(mlr_transform_bs$residuals)
-```
-Comments:
-(1) Histogram plot above can be said appproximately normal. 
-
-# boxcox transformation on "mlr" model
-
-```{r}
-library(MASS)
-b_orig <- boxcox(mlr, lambda = seq(0,0.2,.1))
-boxcox_values_orig <- cbind(b_orig$x,b_orig$y)
-boxcox_values_orig[order(-b_orig$y),] 
-value_orig <- boxcox_values_orig[order(-b_orig$y),][1,1]
-value_orig #lambda = 0.010101010
-orig_data <- cbind(orig_data, orig_data$INCOME^value_orig)
-names(orig_data)[17] <- "Income_transform_orig"
-mlr_transform_orig <- lm(orig_data$Income_transform_orig ~. -INCOME -Income_transform_bs, data = orig_data)
-summary(mlr_transform_orig)
-```
-Comments:
-(1) Ran regression on box-cox transformed income using all the independent variables.
-(2) "mlr_transform_orig" model's adjusted R^2 is equal to 0.5836
-
-# plot of "mlr_transform_orig" model
-
-```{r}
-plot(mlr_transform_orig)
-```
-Comments:
-(1) Looking at four plots reveal that "mlr_transform_orig" model doesn't quite satisfy the regression assumptions. 
-
-# histogram plot of "mlr_transform_orig" model's residuals
-
-```{r}
-hist(mlr_transform_orig$residuals)
-```
-Comments:
-(1) We can see that plot of residuals are close to being normally distributed. 
-
-# backward elimination applied on "mlr_transform_orig" model
-
-```{r}
-step(mlr_transform_orig, direction = "backward")
-```
-Comments:
-(1) Applying backward elimination on "mlr_transform_orig" model reveals that using AGE, NUM_HOURS_WEEK, TRAVEL_TIME, INDUSTRY, EDUC, DIVISION, SCHL_TYPE, HEALTH_INS, and WEEKS_WORKED yields the best model.
-
-
-# stepwise regression applied on "mlr_transform_orig" model
-
-```{r}
-step(mlr_transform_orig, direction = "both")
-```
-Comments:
-(1) Applying backward elimination on "mlr_transform_orig" model reveals that using AGE, NUM_HOURS_WEEK, TRAVEL_TIME, INDUSTRY, EDUC, DIVISION, SCHL_TYPE, HEALTH_INS, and WEEKS_WORKED yields the best model.
-
-# Multiple linear regression: "mlr_transform_orig_bs" model  
-
-```{r}
-mlr_transform_orig_bs <- lm(orig_data$Income_transform_orig ~ AGE + NUM_HOURS_WEEK + 
+orig_data$INCOME_TRANSFORMED <- orig_data$INCOME^value_bs
+mlr_transform_bs <- lm(formula = orig_data$INCOME_TRANSFORMED ~ AGE + NUM_HOURS_WEEK + 
     TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
     WEEKS_WORKED, data = orig_data)
-summary(mlr_transform_orig_bs)
+summary(mlr_transform_bs)
 ```
-Comments:
-(1) Ran regression on box-cox transformed income using variables selected by both stepwise regression and backward elimination applied on "mlr_transform_orig" model.
-(2) "mlr_transform_orig" model has adjusted R^2 equal to 0.5848
 
-# Cook's Distance Measure plot of "mlr_transform_orig_bs" model
+The transormed model has $\bar{R}^2$ equal to $0.5848$, which is a big improvement from all previous models. 
+
+## Residual analysis of the transormed model
+
+### Residual plots
+
+```{r}
+par(mfrow = c(2, 2), pch = 16, cex = .5)
+plot(mlr_transform_bs)
+```
+The transformed model still seems to not quite satisfy the regression assumptions. There are, however, improvements in the **Normal Probability Plot** and **Residuals vs. Fitted Values** plot, indicating that this model more accurately following the assumptions of constant variance and normality than the previous models discussed:
+
+(1) The Normal Probability Plot appears fairly linear, indicating the normality assumption is satisfied. 
+(2) The Residials vs. Fitted Values plot doesn't appear to have any obvious patterns, with only slight fanning out for larger fitted values (suspected outliers). There is no clear indication that the constant variance assumption may be invalidated. 
+
+### Histogram of the transformed model's residuals
+
+```{r}
+hist(mlr_transform_bs$residuals, col = "lightgray")
+```
+Histogram plot above can be said appproximately normal, further indicating that the normality assumption holds for the transformed model. 
+
+*TODO: test Anderson-Darling statistic*.
+
+### Anderson-Darling statistic test
+```{r}
+library(nortest)
+ad.test(mlr_transform_bs$residuals)
+```
+
+### Cook's Distance Measure plot for the transformed model
 
 ```{r}
 library(car)
-plot(mlr_transform_orig_bs, pch = 18, col ="red", which = c(4)) 
-cook <- round(cooks.distance(mlr_transform_orig_bs), 5)
-sort(cook) #sorted in ascending order of cook values
-f_50 <- qf(0.50, df1 = 10, df2 = nrow(orig_data) - 10 )
-f_50 #calcuation of F[0.5]
-cook[cook > f_50]
-f_80 <- qf(0.20, df1 = 10, df2 = nrow(orig_data) - 10 )
-f_80 #calcuation of F[0.8]
-length(cook[cook < f_80])
+plot(mlr_transform_bs, pch = 18, col ="red", which = c(4)) 
+cook <- round(cooks.distance(mlr_transform_bs), 5)
+abline(h = 4*mean(cook, na.rm=T), col="blue")  # add cutoff line
 ```
-Comments:
-(1) There seems to be no influential observations according to cook's distance measure because none of the observations have cook's distance values greater than F[0.5], but every observations have cook's distance values less than F[0.8]
+```{r}
+f_50 <- qf(0.50, df1 = 10, df2 = nrow(orig_data) - 10 )
+f_80 <- qf(0.20, df1 = 10, df2 = nrow(orig_data) - 10 )
+any(cook > f_50, na.rm = T)
+```
+There seems to be no influential observations according to cook's distance measure because none of the observations have cook's distance values greater than F[0.5], but every observations have cook's distance values less than F[0.8]
 
-# Studentized residuals of "mlr_transform_orig_bs" model
+** TODO: I belive that there is something wrong with this calculation. I think Cook's D should have discovered influential observations here. **
+
+### Studentized residuals of the transormed model
 
 ```{r}
-stud_residual <- rstandard(mlr_transform_orig_bs) #studentized residuals
-omit_stud <-  stud_residual[stud_residual < -2 | stud_residual > 2 | is.na(stud_residual)] #studentized residuals greater than absolute value of 2 and na values
-omit_stud
-length(stud_residual[stud_residual < -2 | stud_residual > 2 | is.na(stud_residual)])
+stud_residual <- rstandard(mlr_transform_bs) #studentized residuals
+omit_stud <- which(stud_residual < -2 | stud_residual > 2 | is.na(stud_residual)) #studentized residuals greater than absolute value of 2 and na values
+length(omit_stud)
 #28 potential outliers wrt y values
 ```
-Comments:
-(1) After studentizing residuals from "mlr_transform_orig_bs" model, we selected 28 potential outliers wrt y values. 
+After studentizing residuals from "mlr_transform_orig_bs" model, we selected 28 potential outliers with respect to $y$ values. 
 
-# Dropping 28 potential outliers from "mlr_transform_orig_bs" model and running new regression
+### Dropping potential outliers from the transormed model
 
 ```{r}
-orig_data_temp <- orig_data
-orig_data_temp <- cbind(orig_data_temp, stud_residual)
-orig_data_stud_omit <- orig_data[!(orig_data_temp$stud_residual %in% omit_stud),]
-mlr_transform_orig_bs_omit <- lm(orig_data_stud_omit$Income_transform_orig ~ AGE + NUM_HOURS_WEEK + TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
-WEEKS_WORKED, data = orig_data_stud_omit)
+orig_data_stud_omit <- orig_data[-omit_stud,]
+mlr_transform_orig_bs_omit <- lm(INCOME_TRANSFORMED ~ AGE + NUM_HOURS_WEEK + 
+    TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
+    WEEKS_WORKED, data = orig_data_stud_omit)
 summary(mlr_transform_orig_bs_omit)
 ```
-Comments:
-(1) Ran regression on box-cox transformed income using AGE, NUM_HOURS_WEEK, TRAVEL_TIME, INDUSTRY, EDUC, DIVISION, SCHL_TYPE, HEALTH_INS, and WEEKS_WORKED variables after dropping 28 observations that were classified as potential outliers.
-(2) "mlr_transform_orig_bs" model has adjusted R^2 equal to 0.6783.
+After dropping 28 observations that were classified as potential outliers model has $\bar{R}^2$ equal to $0.6783$. This is notably increased from the $0.5848$ value before the outliers were dropped. 
+
+### Anderson-Darling statistic test
+```{r}
+library(nortest)
+ad.test(mlr_transform_orig_bs_omit$residuals)
+```
 
 
 ```{r}
+par(mfrow = c(2, 2), pch = 16, cex = .5)
 plot(mlr_transform_orig_bs_omit)
 ```
-Comments:
-(1) 4 plots above seem to indicate that "mlr_transform_orig_bs_omit" model satisfy regresion assumptions. 
+4 plots above seem to indicate that the model without suspected outliers satisfies the regresion assumptions. The **Normal Probability Plot** is very linear, and the **Residuals vs. Fitted Value** Plot shows no sighns of violation of the regression assumptions of normalilty and constant variance of the error terms. 
 
-# Leverage values for "mlr_transform_orig_bs" model
+###  Leverage values for the transformed model
 
 ```{r}
-lev <- hatvalues(mlr_transform_orig_bs)
+lev <- hatvalues(mlr_transform_orig_bs_omit)
 cutoff_lev <- 2 * 10 / nrow(orig_data)
 cutoff_lev
-lev[lev > cutoff_lev]
 length(lev[lev > cutoff_lev]) #293 observations that are associated with large leverage values
 ```
-Comments: There are 293 observations that are associated with large leverage values. We believe that large leverage values are less of a concern. 
+There are 293 observations that are associated with large leverage values. We believe that large leverage values are less of a concern. 
 
 
-# Conclusion:
-Our "mlr" model has adjusted R^2 = 0.3092 and F-test indicates that the overall model is significant at alpha=0.05. However, plotting residuls reveal that "mlr" model doesn't satisfy the regression assumptions. "mlr_t" model doesn't do any better than "mlr" model in terms of adjusted R^2 because they have same adjusted R^2 value. Running vif test reveal that "mlr" model doesn't seem to exhibit any serious multicollinearity among dependent variables. We can further narrow down our model by runnning both backward elimination and stepwise regression on "mlr" model. Both methods leave us with SEX, AGE, NUM_HOURS_WEEK, EDUC, and DIVISION variables to run regression on income variable. "mlr_bs" model does slightly better than "mlr" model in terms of adjusted R^2 because now adjusted R^2 is 0.3108, but plot of residuals shows that "mlr_bs" model still doesn't satisfy the regression assumption. In order to meet the regression assumptions requirement, we had to transform our income, depedent variable, using box-cox transformation mathod. Applying box-cox transformation on "mlr_bs" model gives us "mlr_transform_bs" model, which has residuals normally distributed and adjusted R^2 equal to 0.503. However, plot of residuals doesn't seem to quite satisfy the regression assumption even though distribution of residuals way more closely resembles noraml distribution than "mlr" or "mlr_bs" model. 
+# Conclusion
 
-It seems that we can do better by applying boxcox transformation on "mlr" model(the original model) first before applying stepwise regression or backward elimination method. If we box-cox transform our income variable first, we get "mlr_transform_orig" model, which has adjusted R^2 is equal to 0.5836. Then, we sequentially apply stepwise regression or backward elimination method on "mlr_transform_orig" model. Both methods give us two identical models using same independent variables. Finally, we can test for influential observations wrt both y and x values. Cook's distance measure test indicate that we don't seem to have any influential observations wrt both x and y values. However, applying studentized residuals statistical test on "mlr_transform_orig" model reveal that we have 28 potential outliers that need to be taken care of. We decided to exclude those 28 outliers and ran a new regression using reduced data set. At last, we have achieved our best model so far. "mlr_transform_orig_bs" model has adjusted R^2 equal to 0.6783, and plots of residuals approximately satisfies the regression assumption even though we have few observations that are possibly outliers wrt to either y or x values.  
+Our preliminary model has adjusted R^2 = 0.3092 and F-test indicates that the overall model is significant at alpha=0.05. However, plotting residuls reveal that preliminary model doesn't satisfy the regression assumptions. Manual model doesn't do any better than preliminary model in terms of adjusted R^2 because they have same adjusted R^2 value. Running vif test reveal that preliminary model doesn't seem to exhibit any serious multicollinearity among dependent variables. We can further narrow down our model by runnning both backward elimination and stepwise regression on preliminary model. Both methods leave us with SEX, AGE, NUM_HOURS_WEEK, EDUC, and DIVISION variables to run regression on income variable. Automatic model does slightly better than preliminary model in terms of adjusted R^2 because now adjusted R^2 is 0.3108, but plot of residuals shows that automatic model still doesn't satisfy the regression assumption. In order to meet the regression assumptions requirement, we had to transform our income, depedent variable, using box-cox transformation mathod. Applying box-cox transformation on automatic model gives us transformed automatic model, which has residuals normally distributed and adjusted R^2 equal to 0.503. However, plot of residuals doesn't seem to quite satisfy the regression assumption even though distribution of residuals way more closely resembles noraml distribution than preliminary or automatic model. 
+
+It seems that we can do better by applying boxcox transformation on preliminary model(the original model) first before applying stepwise regression or backward elimination method. If we box-cox transform our income variable first, we get transformed preliminary model, which has adjusted R^2 is equal to 0.5836. Then, we sequentially apply stepwise regression or backward elimination method on transformed preliminary model. Both methods give us two identical models using same independent variables. Finally, we can test for influential observations wrt both y and x values. Cook's distance measure test indicate that we have some influential observations wrt both x and y values. Likewise, applying studentized residuals statistical test on automatic transformed preliminary model reveals that we have 28 potential outliers that need to be taken care of. We decided to exclude those 28 outliers and ran a new regression using reduced data set. At last, we have achieved our best model so far. automatic transformed preliminary model with 28 outliers omitted has adjusted R^2 equal to 0.6783, and plots of residuals approximately satisfies the regression assumption even though we have few observations that are possibly outliers wrt to either y or x values.  
