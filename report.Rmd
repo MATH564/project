@@ -346,7 +346,7 @@ library(nortest)
 ad.test(mlr_transform_orig_bs_omit$residuals)
 ```
 
-
+### Residual Plots
 ```{r}
 par(mfrow = c(2, 2), pch = 16, cex = .5)
 plot(mlr_transform_orig_bs_omit)
