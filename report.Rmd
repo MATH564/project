@@ -292,15 +292,14 @@ The transformed model still seems to not quite satisfy the regression assumption
 ```{r}
 hist(mlr_transform_bs$residuals, col = "lightgray")
 ```
-Histogram plot above can be said appproximately normal, further indicating that the normality assumption holds for the transformed model. 
-
-*TODO: test Anderson-Darling statistic*.
+Histogram plot above can be said appproximately normal, further indicating that the normality assumption holds for the transformed model. However, we might need to run AD test to further determine whether normality condition is met. 
 
 ### Anderson-Darling statistic test
 ```{r}
 library(nortest)
 ad.test(mlr_transform_bs$residuals)
 ```
+Applyting AD test on our box-cox transfomed and stepwise regression applied model reveal that normality assumption is not satisfied because we can reject the null hypothesis of AD test at alpha = 0.05. 
 
 ### Cook's Distance Measure plot for the transformed model
 
@@ -329,7 +328,7 @@ length(omit_stud)
 ```
 After studentizing residuals from "mlr_transform_orig_bs" model, we selected 28 potential outliers with respect to $y$ values. 
 
-### Dropping potential outliers from the transormed model
+### Dropping potential outliers from the transformed model
 
 ```{r}
 orig_data_stud_omit <- orig_data[-omit_stud,]
@@ -345,6 +344,7 @@ After dropping 28 observations that were classified as potential outliers model 
 library(nortest)
 ad.test(mlr_transform_orig_bs_omit$residuals)
 ```
+Applyting AD test on our final best model reveal that normality assumption is satisfied because we fail to reject the null hypothesis of AD test at alpha = 0.05.
 
 ### Residual Plots
 ```{r}
