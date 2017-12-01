@@ -4,7 +4,13 @@ output:
   html_notebook:
     toc: true
     theme: united
+author: Chul Ho Choi, Vadym Ovcharenko, Marissa Ashner
 ---
+
+# Introduction
+In this project, we decided to study a particular relationship between personal variable and US citizen's income... 
+
+* TODO: please, complete the introduction... *
 
 # Data preparation
 
@@ -20,6 +26,7 @@ head(df)
 
 ```{r}
 # aggregating the industry variable
+# TODO: @Connor, please explain how you did the transformations
 par(mfrow=c(1,2))
 plot(df$IND)
 plot(df$IND_revised)
@@ -45,7 +52,6 @@ ggplot(df) +
   geom_point(aes(x = seq(1,nrow(df)), y = df$INCTOT, color=df$EDUC_revised)) +
   theme_bw()
 ```
-
 ```{r}
 # aggregate the school type variable
 df$SCHLTYPE_revised <- as.factor(sapply(df$SCHLTYPE, function(x) {
@@ -59,7 +65,7 @@ plot(as.factor(df$SCHLTYPE))
 plot(df$SCHLTYPE_revised)
 ```
 
-We dropped `INCWAGE` variable after realizing it was not very discriptive. We decided to use `INCTOT` as a response variable.
+We dropped `INCWAGE` variable after realizing it was not very discriptive. We decided to use total income as a response variable.
 ```{r}
 hist(df$INCTOT, breaks = 80)
 ```
@@ -81,7 +87,7 @@ dt <- dt[,list(INCOME=weighted.mean(INCOME, WEIGHT)), setdiff(names(dt), c("WEIG
 head(dt)
 ```
 
-We still left with around 10,000 rows. 
+After weighting the data, we still left with around 10,000 rows. 
 ```{r}
 
 distributions <- function(dt) {
@@ -99,7 +105,7 @@ distributions <- function(dt) {
 # visualise distributions
 distributions(dt)
 ```
-The goal is to sample the dataset and maintain the distribution properties of the variable
+We sample the dataset and make sure to maintain the distribution properties of the variables.
 ```{r}
 set.seed(1337)
 dts <- dt[sample(nrow(dt), 500), ]
@@ -210,6 +216,7 @@ Four plots above shows that the second model does not satisfy the regression ass
 ### Backward elimination
 
 ```{r}
+set.seed(1337)
 step(mlr, direction = "backward")
 ```
 Running backward elimination method reveals that we should include `SEX`, `AGE`, `NUM_HOURS_WEEK`, `EDUC`, `DIVISION` as our independent variables. It should be noted that these variables are the same as the significant variables chosen for the manual model above, with the addition of the `SEX` variable here. 
@@ -229,7 +236,7 @@ Automatic model building procedure suggested that we should use `SEX`, `AGE`, `N
 mlr_bs <- lm(orig_data$INCOME ~ SEX + AGE + NUM_HOURS_WEEK + EDUC + DIVISION, data = orig_data)
 summary(mlr_bs)
 ```
-Adjusted $\bar{R}^2$ turned out to be $0.3108$, which is slightly better than "mlr" model. 
+Adjusted $\bar{R}^2$ turned out to be $0.3108$, which is slightly better than the first model. 
 
 ### Residual analysis of "automatic" model
 
@@ -239,7 +246,7 @@ Adjusted $\bar{R}^2$ turned out to be $0.3108$, which is slightly better than "m
 par(mfrow = c(2, 2), pch = 16, cex = .5)
 plot(mlr_bs)
 ```
-Although the $\bar{R}^2$ was slightly improved compared to the prior models, the residual plots still show that our model doesn't satisfy the regression assumptions.  
+Although the $\bar{R}^2$ was slightly improved compared to the prior models, the residual plots still shows that our model doesn't satisfy the regression assumptions.  
 
 #### Histogram plot of "automatic" model's residuals.
 
@@ -256,9 +263,9 @@ library(MASS)
 b_bs <- boxcox(mlr, lambda = seq(0,0.2,.1))
 boxcox_values_bs <- cbind(b_bs$x,b_bs$y)
 value_bs <- boxcox_values_bs[order(-b_bs$y),][1,1]
-value_bs # 0.1010101
+value_bs
 ```
-Running Box-Cox test reveals that we should use $\lambda =0.1010101$ for our transformation on our dependent variable which is income. As you can see from above plot, maximum likelihood estimation has the highest peak at $\lambda = 0.1010101$.
+Running Box-Cox test reveals that we should use $\lambda = 0.01414141$ for our transformation on our dependent variable which is income. As you can see from above plot, maximum likelihood estimation has the highest peak at $\lambda = 0.01414141$.
 
 ## Box-Cox transformed model
 
@@ -267,12 +274,11 @@ We created a new model using transformed predicted variable. Re-running backward
 ```{r}
 orig_data$INCOME_TRANSFORMED <- orig_data$INCOME^value_bs
 mlr_transform_bs <- lm(formula = orig_data$INCOME_TRANSFORMED ~ AGE + NUM_HOURS_WEEK + 
-    TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
-    WEEKS_WORKED, data = orig_data)
+    TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + WEEKS_WORKED, data = orig_data)
 summary(mlr_transform_bs)
 ```
 
-The transormed model has $\bar{R}^2$ equal to $0.5848$, which is a big improvement from all previous models. 
+The transormed model has $\bar{R}^2$ equal to $0.6029$, which is a big improvement from all previous models. 
 
 ## Residual analysis of the transormed model
 
@@ -299,71 +305,107 @@ Histogram plot above can be said appproximately normal, further indicating that 
 library(nortest)
 ad.test(mlr_transform_bs$residuals)
 ```
-Applyting AD test on our box-cox transfomed and stepwise regression applied model reveal that normality assumption is not satisfied because we can reject the null hypothesis of AD test at alpha = 0.05. 
+Applyting AD test on our box-cox transfomed and stepwise regression applied model reveal that normality assumption is not satisfied because we can reject the null hypothesis of AD test at $\alpha = 0.05$. 
 
 ### Cook's Distance Measure plot for the transformed model
 
 ```{r}
 library(car)
 plot(mlr_transform_bs, pch = 18, col ="red", which = c(4)) 
-cook <- round(cooks.distance(mlr_transform_bs), 5)
-abline(h = 4*mean(cook, na.rm=T), col="blue")  # add cutoff line
+cook <- cooks.distance(mlr_transform_bs)
+abline(h = 4/nrow(orig_data), col="blue")  # add cutoff line
 ```
+
+According to the plot of the Cook's distances, there might be several outlying values. 
+
 ```{r}
-f_50 <- qf(0.50, df1 = 10, df2 = nrow(orig_data) - 10 )
-f_80 <- qf(0.20, df1 = 10, df2 = nrow(orig_data) - 10 )
+k <- length(coef(mlr_transform_bs)) - 1
+n <- nrow(orig_data)
+f_50 <- qf(0.50, df1 = k+1, df2 = n - k - 1)
+f_80 <- qf(0.20, df1 = k+1, df2 = n - k - 1)
 any(cook > f_50, na.rm = T)
 ```
-There seems to be no influential observations according to cook's distance measure because none of the observations have cook's distance values greater than F[0.5], but every observations have cook's distance values less than F[0.8]
+There seems to be no influential observations according to cook's distance test described in the textbook. None of the observations have cook's distance values greater than $F_{[0.5]}$, but every observations have cook's distance values less than $F_{[0.8]}$. Some sources suggest different cut-off values to use for spotting highly influential points. 
 
-** TODO: I belive that there is something wrong with this calculation. I think Cook's D should have discovered influential observations here. **
+```{r}
+omit_cook <- which(cook > 4/nrow(orig_data))
+length(omit_cook)
+```
+Using the cut-off value $D_i>4/n$, where $n$ is the number of observations (shown as a horisontal line on the plot above), we detected 39 outlying values.
 
 ### Studentized residuals of the transormed model
 
 ```{r}
-stud_residual <- rstandard(mlr_transform_bs) #studentized residuals
+stud_residual <- rstandard(mlr_transform_bs) # studentized residuals
 omit_stud <- which(stud_residual < -2 | stud_residual > 2 | is.na(stud_residual)) #studentized residuals greater than absolute value of 2 and na values
-length(omit_stud)
-#28 potential outliers wrt y values
+length(omit_stud) # 28 potential outliers wrt y values
 ```
-After studentizing residuals from "mlr_transform_orig_bs" model, we selected 28 potential outliers with respect to $y$ values. 
+After studentizing residuals for transformed model, we selected 29 potential outliers with respect to $y$ values. 
+
+###  Leverage values for the transformed model
+
+```{r}
+lev <- hatvalues(mlr_transform_bs)
+cutoff_lev <- 2 * (k +1) / n
+plot(lev, pch = 16, cex = .5)
+abline(h = cutoff_lev, col="red")  # add cutoff line
+omit_lev <- which(lev > cutoff_lev)
+length(omit_lev) 
+```
+There are 25 observations that are associated with large leverage values.
+
 
 ### Dropping potential outliers from the transformed model
 
+Studying the nature of outliers is beyond the scope of this analysis, so we decided to see how the model will improve if we exclude the outliers with respect to $y$ them from the model. We didn't exclude outliers wrt to $x$ because it showed to decrease the utility of the model. 
+
 ```{r}
-orig_data_stud_omit <- orig_data[-omit_stud,]
+orig_data_stud_omit <- orig_data[-c(omit_stud, omit_cook),]
 mlr_transform_orig_bs_omit <- lm(INCOME_TRANSFORMED ~ AGE + NUM_HOURS_WEEK + 
     TRAVEL_TIME + INDUSTRY + EDUC + DIVISION + SCHL_TYPE + HEALTH_INS + 
     WEEKS_WORKED, data = orig_data_stud_omit)
 summary(mlr_transform_orig_bs_omit)
+nrow(orig_data) - nrow(orig_data_stud_omit) # number of excluded observations
 ```
-After dropping 28 observations that were classified as potential outliers model has $\bar{R}^2$ equal to $0.6783$. This is notably increased from the $0.5848$ value before the outliers were dropped. 
+After dropping 47 observations that were classified as potential outliers model has $\bar{R}^2$ equal to $0.6957$. This is notably increased from the $0.6029$ value before the outliers were dropped. 
 
 ### Anderson-Darling statistic test
 ```{r}
 library(nortest)
 ad.test(mlr_transform_orig_bs_omit$residuals)
 ```
-Applyting AD test on our final best model reveal that normality assumption is satisfied because we fail to reject the null hypothesis of AD test at alpha = 0.05.
+Applyting AD test on our final best model reveal that normality assumption is satisfied because we fail to reject the null hypothesis of AD test at $\alpha = 0.05$.
 
 ### Residual Plots
 ```{r}
 par(mfrow = c(2, 2), pch = 16, cex = .5)
 plot(mlr_transform_orig_bs_omit)
 ```
-4 plots above seem to indicate that the model without suspected outliers satisfies the regresion assumptions. The **Normal Probability Plot** is very linear, and the **Residuals vs. Fitted Value** Plot shows no sighns of violation of the regression assumptions of normalilty and constant variance of the error terms. 
+4 plots above seem to indicate that the model without suspected outliers satisfies the regresion assumptions. The **Normal Probability Plot** seems linear, and the **Residuals vs. Fitted Value** Plot shows only minor signs of violation of the constant variance assumption (slight fanning out). 
 
-###  Leverage values for the transformed model
+## Interpreting the model
+Our final model demonstrates satisfactory adherence to the regression assumptions and has a relatively high adjusted R-squared score of 0.6957. It means that we can draw somewhat reasoned conclusions from its interpretation. 
 
-```{r}
-lev <- hatvalues(mlr_transform_orig_bs_omit)
-cutoff_lev <- 2 * 10 / nrow(orig_data)
-cutoff_lev
-length(lev[lev > cutoff_lev]) #293 observations that are associated with large leverage values
-```
-There are 293 observations that are associated with large leverage values. We believe that large leverage values are less of a concern. 
+Unsurprisingly, some of the most significant predictors are `NUM_HOURS_WEEK` and `WEEKS_WORKED` because they are usually highly correlated with a person's income. More interesting relationships are demonstrated by the variables corresponding to Northeastern division, health insurance coverage, 5+ years of college, public school type, etc. To understand the relationships of these variables to the person's income their estimated coefficients must be interpreted. Interpreting the coefficients of a model with transformed predicted variable turns out to not be an easy task. Since the value of $\lambda = 0.01414141$ in our transformation was close to zero, we decided to follow the procedure described [here](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqhow-do-i-interpret-a-regression-model-when-some-variables-are-log-transformed/) assuming that the transformation was logarithmic. Thus, we can interpret estimated coefficients to be an approximate percentage change in the person's income. For example, the estimated coefficient for a health insurance variable (`HEALTH_INS`) is $5.516e-03$. $100(e^5.516e-03 - 1) = 0.55$ means that the expected difference in yearly income is 0.55% for an individual with health insurance comparing to an individual without one.
+
+Some of the most interesting regression analysis results can be summed up as follows:
+
+* Individuals with 5+ years of college have 1.53% higher income
+* Individuals working in the Northeastern division have 0.6% higher income than those working in Midwest
+* Each additional commute hour increases income by 0.4%
+* Every ten years, individual's income increases by 0.2%
+
+Since `SEX` variable was not included in the final model, we conclude that gender does not have a significant relationship to the individual's income.
+
 
 # Conclusion
-Our preliminary model has adjusted $\bar{R}^2 = 0.3092$ and F-test indicates that the overall model is significant at $\alpha=0.05$. However, plotting residuals reveal that the preliminary model doesn't satisfy the regression assumptions. The manual model doesn't do any better than the preliminary model in terms of adjusted $\bar{R}^2$ because they have same adjusted $\bar{R}^2$ value. Running vif test reveal that the preliminary model doesn't seem to exhibit any serious multicollinearity among dependent variables. We can further narrow down our model by runnning both backward elimination and stepwise regression on preliminary model. Both methods leave us with `SEX`, `AGE`, `NUM_HOURS_WEEK`, `EDUC`, and `DIVISION` variables to run regression on income variable. This automatic model does slightly better than the preliminary model in terms of adjusted $\bar{R}^2$ because now adjusted $\bar{R}^2 = 0.3108$, but plot of residuals shows that "mlr_bs" model still doesn't satisfy the regression assumption. In order to meet the regression assumptions requirement, we had to transform our income, dependent variable, using box-cox transformation mathod. Applying box-cox transformation on the automatic model gives us an automatic transformed model, which has residuals normally distributed and adjusted $\bar{R}^2 = 0.503$. However, plot of residuals doesn't seem to quite satisfy the regression assumption even though distribution of residuals way more closely resembles normal distribution than the preliminary or automatic models. 
+Our preliminary model has adjusted $\bar{R}^2 = 0.3092$ and F-test indicates that the overall model is significant at $\alpha=0.05$. However, plotting residuals reveal that the preliminary model doesn't satisfy the regression assumptions. The manual model doesn't do any better than the preliminary model in terms of adjusted $\bar{R}^2$ because they have same adjusted $\bar{R}^2$ value. Running `vif` test reveal that the preliminary model doesn't seem to exhibit any serious multicollinearity among dependent variables. We can further narrow down our model by runnning both backward elimination and stepwise regression on preliminary model. Both methods leave us with `SEX`, `AGE`, `NUM_HOURS_WEEK`, `EDUC`, and `DIVISION` variables to run regression on income variable. This automatic model does slightly better than the preliminary model in terms of adjusted $\bar{R}^2$ because now adjusted $\bar{R}^2 = 0.3108$, but plot of residuals shows that "automatic" model still doesn't satisfy the regression assumption. In order to meet the regression assumptions requirement, we had to transform our income, dependent variable, using box-cox transformation mathod. Applying box-cox transformation on the automatic model gives us an automatic transformed model, which has residuals normally distributed and adjusted $\bar{R}^2 = 0.503$. However, plot of residuals doesn't seem to quite satisfy the regression assumption even though distribution of residuals way more closely resembles normal distribution than the preliminary or automatic models. 
 
-It seems that we can do better by applying boxcox transformation on the preliminary model first before applying stepwise regression or backward elimination method. If we box-cox transform our income variable first, we get a preliminary transformed model, which has adjusted $\bar{R}^2 = 0.5836$. Then, we sequentially apply stepwise regression or backward elimination method on this model. Both methods give us two identical models using same independent variables. Finally, we can test for influential observations wrt both y and x values. Cook's distance measure test indicate that we don't seem to have any influential observations wrt both x and y values. However, applying studentized residuals statistical test on "mlr_transform_orig" model reveal that we have 28 potential outliers that need to be taken care of. We decided to exclude those 28 outliers and ran a new regression using reduced data set. At last, we have achieved our best model so far. The preliminary transformed model has adjusted $\bar{R}^2 = 0.6783$ after stepwise regression, and plots of residuals approximately satisfies the regression assumption even though we have few observations that are possibly outliers wrt to either y or x values.  
+It seems that we can do better by applying boxcox transformation on the preliminary model first before applying stepwise regression or backward elimination method. If we box-cox transform our income variable first, we get a preliminary transformed model, which has adjusted $\bar{R}^2 = 0.6029$. Then, we sequentially apply stepwise regression or backward elimination method on this model. Both methods give us two identical models using same independent variables. Finally, we can test for influential observations wrt both y and x values. We decided to exclude outliers wrt y and ran a new regression using reduced data set. At last, we have achieved our best model so far. The preliminary transformed model has adjusted $\bar{R}^2 = 0.6957$ after stepwise regression, and plots of residuals approximately satisfies the regression assumption even though we have few observations that are possibly outliers wrt to x values.  
+
+Lastly, we give an interpretation of the final model. We faced a [problem](https://stats.idre.ucla.edu/other/mult-pkg/faq/general/faqhow-do-i-interpret-a-regression-model-when-some-variables-are-log-transformed/) of coefficient interpretation of a transformed model. Here, to interpret the effect of a predictor variable to the outcome variable, we have to:
+
+(a) Assume the transformation to be a natural logarithm transformation (since the value of $\lambda = 0.01414141$ in our transformation was close to zero);
+(b) Approximate the inverse of the transformation to be exponentiation $e^β$ (since exponentiation is the inverse of logarithm function).
+
+As a result, exponentiated coefficients approximately correspond to changes in the ratio of the expected geometric means of the original outcome variable. Consequently, we study the relationships of the most influential variables and present a summary of the most important conclusions.
