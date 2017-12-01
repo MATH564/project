@@ -38,7 +38,7 @@ The initially selected variables obtained from the Minnesota Population Center a
 
 However, there are some complexities of using the retrieved data. First of all, the dataset features factor variables of a high level (e.g., up to 10k levels for the industry variable). Moreover, the dataset is in the form of frequency table, with corresponding weight values showing the number of individuals representing each row. Finally, the number of rows is close to 10k, which is too big for the analysis. 
 
-In this section we preprocess the data to account for missing values and other inconsistencies. We aggregate several variables and sample the dataset to 500 observations. 
+In this section we preprocess the data to account for missing values and other inconsistencies. We aggregate several variables, weight the data and sample the dataset to 500 observations. 
 
 ## Preprocessing
 
