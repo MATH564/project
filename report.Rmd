@@ -26,7 +26,6 @@ head(df)
 
 ```{r}
 # aggregating the industry variable
-# TODO: @Connor, please explain how you did the transformations
 par(mfrow=c(1,2))
 plot(df$IND)
 plot(df$IND_revised)
