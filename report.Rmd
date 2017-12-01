@@ -8,9 +8,37 @@ author: Chul Ho Choi, Vadym Ovcharenko, Marissa Ashner
 ---
 
 # Introduction
-In this project, we decided to study the relationship between personal variables and income from United States citizens in 2016. The data was retrieved from the Minnesota Population Center. This database allowed for personalizing the dataset analyzed in the project. After creating the dataset of choice, the data was preprocessed to account for missing values, and other inconsistencies. Several multiple linear regression models will be discussed that were ran on the preprocessed data set, including a preliminary regression on all variables, a manual regression on significant variables, stepwise regression, and regression on data that was transformed using box-cox transformations. These models will be compared based on their $\bar{R}^2$ and the validation of the assumed model assumptions. Additionally, outliers in the data will be explored and removed, to make a potentially stronger model without these values. 
+In this project, we decided to study the relationship between personal variables and income from United States citizens. It was not easy to find a suitable dataset. The data was retrieved from the Minnesota Population Center. This database allowed for selecting the variables to be included in the dataset. After creating the dataset of choice, the data was preprocessed to account for missing values and other inconsistencies. Several multiple linear regression models are applied to preprocessed data set, including a preliminary regression on all variables, a regression on manually selected variables, stepwise regression, and regression on data that was transformed using box-cox transformations. These models are compared based on their $\bar{R}^2$ and the validation of the assumed model assumptions. Additionally, we explore the outliers in the data to make a potentially stronger model without these values. 
 
 # Data preparation
+
+The initially selected variables obtained from the Minnesota Population Center are:
+
+1. YEAR (Census year)
+2. DATANUM (Data set number)
+3. SERIAL (Household serial number)
+4. HHWT (Household weight)
+5. GQ (Group quarters status)
+6. PERNUM (Person number in sample unit)
+7. PERWT (Person weight)
+8. NCHILD (Number of own children in the household) 9. SEX (Sex)
+10. AGE (Age)
+11. MARRNO (Times married)
+12. RACE (Race [general version])
+13. HCOVANY (Any health insurance coverage)
+14. EDUC (Educational attainment [general version]) 15. SCHLTYPE (Public or private school)
+16. IND (Industry)
+17. WKSWORK2 (Weeks worked last year, intervalled) 18. UHRSWORK (Usual hours worked per week)
+19. INCTOT (Total personal income)
+20. INCWAGE (Wage and salary income)
+21. VETSTAT (Veteran status [general version])
+22. VETSTATD (Veteran status [detailed version])
+23. PWSTATE2 (Place of work: state)
+24. TRANTIME (Travel time to work)
+
+However, there are some complexities of using the retrieved data. First of all, the dataset features factor variables of a high level (e.g., up to 10k levels for the industry variable). Moreover, the dataset is in the form of frequency table, with corresponding weight values showing the number of individuals representing each row. Finally, the number of rows is close to 10k, which is too big for the analysis. 
+
+In this section we preprocess the data to account for missing values and other inconsistencies. We aggregate several variables and sample the dataset to 500 observations. 
 
 ## Preprocessing
 
@@ -19,8 +47,28 @@ df <- read.csv('dataset.csv')
 df$VETSTAT <- as.factor(df$VETSTAT)
 df$IND <- as.factor(df$IND)
 df$SCHLTYPE_revised <- as.factor(df$SCHLTYPE_revised)
-head(df)
+df_raw <- read.csv('dataset_original.csv')
+head(df_raw)
 ```
+
+```{r}
+income$IND_revised <- income$IND
+income$IND_revised[income$IND_revised >= 170 & income$IND_revised <= 3990  ] <- "Agriculture, Forestry, Fishing and Hunting, and Mining"
+income$IND_revised[income$IND_revised >= 4070 & income$IND_revised <= 4590  ] <- "Wholesale Trade"
+income$IND_revised[income$IND_revised >= 4670 & income$IND_revised <= 5790  ] <- "Retail Trade"
+income$IND_revised[income$IND_revised >= 6070 & income$IND_revised <= 6390  ] <- "Transportation and Warehousing, and Utilities"
+income$IND_revised[income$IND_revised == 570 || income$IND_revised == 580 || income$IND_revised == 590 || income$IND_revised == 670 || income$IND_revised == 680 || income$IND_revised == 690] <- "Transportation and Warehousing, and Utilities"
+income$IND_revised[income$IND_revised >= 6470 & income$IND_revised <= 6780  ] <-"Information"
+income$IND_revised[income$IND_revised >= 6870 & income$IND_revised <= 7190  ] <- "Finance and Insurance, and Real Estate and Rental and Leasing"
+income$IND_revised[income$IND_revised >= 7270 & income$IND_revised <= 7790  ] <- "Professional, Scientific, and Management, and Administrative, and Waste Management Services"
+states_revised$IND_revised[states_revised$IND %in% c(570,580,590,670,680,690)] <- "Transportation and Warehousing, and Utilities"
+income$IND_revised[income$IND_revised >= 7860 & income$IND_revised <= 8470  ] <- "Educational Services, and Health Care and Social Assistance"
+income$IND_revised[income$IND_revised >= 8560 & income$IND_revised <= 8690  ] <- "Arts, Entertainment, and Recreation, and Accommodation and Food Services"
+income$IND_revised[income$IND_revised >= 8770 & income$IND_revised <= 9290  ] <- "Other Services, Except Public Administration"
+income$IND_revised[income$IND_revised >= 9370 & income$IND_revised <= 9590  ] <- "Public Administration"
+income$IND_revised[income$IND_revised >= 9670 & income$IND_revised <= 9920  ] <- "Active Duty Military"
+```
+We transformed `IND` variable by aggregating each data point into its appropriate industry category.
 
 ```{r}
 # aggregating the industry variable
@@ -29,37 +77,6 @@ plot(df$IND)
 plot(df$IND_revised)
 ```
 
-```{r}
-income$IND_revised <- income$IND
-income$IND_revised[income$IND_revised >= 170 & income$IND_revised <= 3990  ] <- "Agriculture, Forestry, Fishing and Hunting, and Mining" 
-
-income$IND_revised[income$IND_revised >= 4070 & income$IND_revised <= 4590  ] <- "Wholesale Trade"
-
-income$IND_revised[income$IND_revised >= 4670 & income$IND_revised <= 5790  ] <- "Retail Trade"
-
-income$IND_revised[income$IND_revised >= 6070 & income$IND_revised <= 6390  ] <- "Transportation and Warehousing, and Utilities"
-
-income$IND_revised[income$IND_revised == 570 || income$IND_revised == 580 || income$IND_revised == 590 || income$IND_revised == 670 || income$IND_revised == 680 || income$IND_revised == 690] <- "Transportation and Warehousing, and Utilities"
-
-income$IND_revised[income$IND_revised >= 6470 & income$IND_revised <= 6780  ] <-"Information"
-
-income$IND_revised[income$IND_revised >= 6870 & income$IND_revised <= 7190  ] <- "Finance and Insurance, and Real Estate and Rental and Leasing"
-
-income$IND_revised[income$IND_revised >= 7270 & income$IND_revised <= 7790  ] <- "Professional, Scientific, and Management, and Administrative, and Waste Management Services"
-
-states_revised$IND_revised[states_revised$IND %in% c(570,580,590,670,680,690)] <- "Transportation and Warehousing, and Utilities"
-
-income$IND_revised[income$IND_revised >= 7860 & income$IND_revised <= 8470  ] <- "Educational Services, and Health Care and Social Assistance"
-
-income$IND_revised[income$IND_revised >= 8560 & income$IND_revised <= 8690  ] <- "Arts, Entertainment, and Recreation, and Accommodation and Food Services"
-
-income$IND_revised[income$IND_revised >= 8770 & income$IND_revised <= 9290  ] <- "Other Services, Except Public Administration"
-
-income$IND_revised[income$IND_revised >= 9370 & income$IND_revised <= 9590  ] <- "Public Administration"
-
-income$IND_revised[income$IND_revised >= 9670 & income$IND_revised <= 9920  ] <- "Active Duty Military"
-```
-We transformed `IND` variable by grouping each data point into its appropriate industry category.
 
 ```{r}
 states_revised <- read.csv("dataset.csv")
@@ -69,16 +86,10 @@ View(states_revised)
 states_revised$PWSTATE2_revised <- states_revised$PWSTATE2
 states_revised <- states_revised[!(states_revised$PWSTATE2_revised >= 61),]
 states_revised <- states_revised[!(states_revised$PWSTATE2_revised == 0),]
-
 states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(53,41,6,30,16,56,32,49,8,4,35,2,15)] <- "WEST"
-
 states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(38,27,46,19,31,20,29,55,26,17,18,39)] <- "MIDWEST"
-
 states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(40,5,48,22,28,1,47,21,54,51,37,45,13,12,10,24,11)] <- "SOUTH"
-
 states_revised$PWSTATE2_revised[states_revised$PWSTATE2_revised %in% c(33,50,23,25,44,9,36,34,42)] <- "NORTHEAST"
-
-write.csv(states_revised, file = "states_revised.csv")
 ```
 Transformed `PWSTATE2` by categorizing each data point into four regions of united states.
 
@@ -91,38 +102,31 @@ cat_revised$RACE_revised[cat_revised$RACE_revised == 2] <- "Black"
 cat_revised$RACE_revised[cat_revised$RACE_revised == 3] <- "American Indian"
 cat_revised$RACE_revised[cat_revised$RACE_revised %in% c(4,5,6)] <- "Asian"
 cat_revised$RACE_revised[cat_revised$RACE_revised %in% c(7,8,9)] <- "Other"
-table(cat_revised$RACE_revised)
 ```
 Transformed `RACE` variable by assigning descripitve names rather than just simple numbers.
 
 ```{r}
 cat_revised$HCOVANY_revised <- cat_revised$HCOVANY
-table(cat_revised$HCOVANY)
 cat_revised$HCOVANY_revised[cat_revised$HCOVANY_revised == 1] <- "No health insurance coverage"
 cat_revised$HCOVANY_revised[cat_revised$HCOVANY_revised == 2] <- "With health insurance coverage"
-table(cat_revised$HCOVANY_revised)
 ```
 Transformed `HCOVANY` variable by assigning descriptive names rather than just simple numbers.
 
 ```{r}
 cat_revised$WKSWORK2_revised <- cat_revised$WKSWORK2
-table(cat_revised$WKSWORK2)
 cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 1] <- "1-13 weeks"
 cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 2] <- "14-26 weeks"
 cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 3] <- "27-39 weeks"
 cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 4] <- "40-47 weeks"
 cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 5] <- "48-49 weeks"
 cat_revised$WKSWORK2_revised[cat_revised$WKSWORK2_revised == 6] <- "50-52 weeks"
-table(cat_revised$WKSWORK2_revised)
 ```
 Transformed `WKSWORK2` variable by assigning descripitve names rather than just simple numbers. 
 
 ```{r}
 cat_revised$VETSTAT_revised <- cat_revised$VETSTAT
-table(cat_revised$VETSTAT)
 cat_revised$VETSTAT_revised[cat_revised$VETSTAT_revised == 1] <- "Not a veteran"
 cat_revised$VETSTAT_revised[cat_revised$VETSTAT_revised == 2] <- "Veteran"
-table(cat_revised$VETSTAT_revised)
 ```
 Transformed `VETSTAT` variable by assigning descripitve names rather than just simple numbers. 
 
@@ -140,13 +144,15 @@ plot(df$EDUC_revised)
 ```
 We aggregated the `EDUC` variable into 4 levels that capture high school, college, and advanced college degrees.
 
-Unsuprisingly, there is an obvious correlation between the education level and income.
+
 ```{r}
 library(ggplot2)
 ggplot(df) +
   geom_point(aes(x = seq(1,nrow(df)), y = df$INCTOT, color=df$EDUC_revised)) +
   theme_bw()
 ```
+Unsuprisingly, there is an obvious correlation between the education level and income.
+
 ```{r}
 # aggregate the school type variable
 df$SCHLTYPE_revised <- as.factor(sapply(df$SCHLTYPE, function(x) {
@@ -162,7 +168,7 @@ plot(df$SCHLTYPE_revised)
 
 We dropped `INCWAGE` variable after realizing it was not very discriptive. We decided to use total income as a response variable.
 ```{r}
-hist(df$INCTOT, breaks = 80)
+hist(df$INCTOT, breaks = 80, col = "lightgrey")
 ```
 
 ```{r}
